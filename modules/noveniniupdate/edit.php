@@ -2,9 +2,9 @@
 
 //
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
-// SOFTWARE NAME: Noven INI Advanced Update
-// SOFTWARE RELEASE: 1.0.0
-// COPYRIGHT NOTICE: Copyright (C) 2009 - Jean-Luc Nguyen, Noven.
+// SOFTWARE NAME: Noven INI Update
+// SOFTWARE RELEASE: $$$VERSION$$$
+// COPYRIGHT NOTICE: Copyright (C) 2009 - Jean-Luc Nguyen, Jerome Vieilledent - Noven.
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
 //   This program is free software; you can redistribute it and/or
@@ -27,7 +27,7 @@
 
 include_once( "kernel/common/template.php" );
 
-$Module =& $Params["Module"];
+$Module = $Params["Module"];
 $Result = array();
 $tpl = templateInit();
 $http = eZHTTPTool::instance();

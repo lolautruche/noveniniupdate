@@ -1,4 +1,5 @@
-<xml>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<IniConfig>
 	<envs>
 		<env name="local" comment="Local"/>
         <env name="dev" comment="Dev"/>
@@ -196,4 +197,43 @@
         </file>
 
 	</files>
-</xml>
+	
+	<!-- Cluster mode handling. index_cluster.php will also be updated -->
+	<!-- "ini" attribute stands for the full file.ini.append.php path. If ommitted, default is "settings/override/file.ini.append.php" -->
+	<!-- "php" attribute stands for the cluster "index_cluster.php" file. If omitted, default is "index_cluster.php" -->
+	<ClusterMode ini="settings/override/file.ini.append.php" php="index_cluster.php">
+		<cluster env="local">
+			<FileHandler>eZDBFileHandler</FileHandler>
+			<DBBackend>eZDBFileHandlerMysqlBackend</DBBackend>
+			<DBHost>cluster-server</DBHost>
+			<DBPort>3306</DBPort>
+			<DBSocket></DBSocket>
+			<DBName>my_resources_db</DBName>
+			<DBUser>myuser</DBUser>
+			<DBPassword>mypassword</DBPassword>
+			<DBChunkSize>65535</DBChunkSize>
+			<DBConnectRetries></DBConnectRetries>
+			<DBExecuteRetries></DBExecuteRetries>
+		</cluster>
+		<cluster env="dev">
+			<FileHandler>eZDBFileHandler</FileHandler>
+			<DBBackend>eZDBFileHandlerMysqlBackend</DBBackend>
+			<DBHost>dev-server</DBHost>
+			<DBPort>3306</DBPort>
+			<DBSocket></DBSocket>
+			<DBName>my_dev_resources_db</DBName>
+			<DBUser>mydevuser</DBUser>
+			<DBPassword>mydevpassword</DBPassword>
+			<DBChunkSize>65535</DBChunkSize>
+			<DBConnectRetries></DBConnectRetries>
+			<DBExecuteRetries></DBExecuteRetries>
+		</cluster>
+		<!-- You can have a ezfs like handler. In this case, db tags are useless -->
+		<cluster env="preprod">
+			<FileHandler>eZFS2FileHandler</FileHandler>
+		</cluster>
+		<cluster env="prod">
+			<FileHandler>eZFS2FileHandler</FileHandler>
+		</cluster>
+	</ClusterMode>
+</IniConfig>

@@ -75,6 +75,18 @@
         <source>The INI parameter(s) have been updated for the selected environment</source>
         <translation>Le(s) paramètre(s) INI ont été mis à jour pour l'environnement sélectionné</translation>
     </message>
+    <message>
+        <source>Cluster mode settings for selected environment "%env"</source>
+        <translation>Réglages du mode Cluster pour l'environnement sélectionné "%env"</translation>
+    </message>
+    <message>
+        <source>Cluster param name</source>
+        <translation>Nom du paramètre Cluster</translation>
+    </message>
+    <message>
+        <source>Cluster param value</source>
+        <translation>Valeur du paramètre Cluster</translation>
+    </message>
 </context>
 <context>
     <name>extension/noveniniupdate/edit</name>
@@ -134,8 +146,63 @@
         <translation>Veuillez sélectionner un environnement</translation>
     </message>
     <message>
-        <source>Invalid INI datatype:</source>
-        <translation>Type de donnée INI invalide</translation>
+        <source>Invalid INI datatype "%datatype"</source>
+        <translation>Type de donnée INI invalide "%datatype"</translation>
+    </message>
+    <message>
+        <source>Given environment "%envname" is not supported/declared in XML config file</source>
+        <translation>L'environnement sélectionné "%envname" n'est pas supporté/déclaré dans le fichier XML de configuration</translation>
+    </message>
+    <message>
+        <source>Write error on file %inifile</source>
+        <translation>Erreur d'écriture pour le fichier %inifile</translation>
+    </message>
+    <message>
+        <source>Cluster Mode is not configured for environment "%envname" in XML config file !</source>
+        <translation>Le mode Cluster n'est pas configuré pour l'environnement "%envname" dans le fichier XML de configuration !</translation>
+    </message>
+    <message>
+        <source>FileHandler "%filehandler" is not supported by NovenINIUpdate !</source>
+        <translation>Le FileHandler "%filehandler" n'est pas supporté par NovenINIUpdate !</translation>
+    </message>
+</context>
+<context>
+    <name>extension/noveniniupdate/script</name>
+    <message>
+        <source>Environment identifier for switching INI params. Use --list-envs switch to list available environments.</source>
+        <translation>Identifiant d'environnement pour éditer les paramètres INI. Utiliser l'option --list-envs pour lister les environnements disponibles.</translation>
+    </message>
+    <message>
+        <source>Lists available environmnents.</source>
+        <translation>Liste tous les environnements disponibles.</translation>
+    </message>
+    <message>
+        <source>Lists configured params for given environment.</source>
+        <translation>Liste les paramètres pour l'environnement donné.</translation>
+    </message>
+    <message>
+        <source>Environment not set ! Please set it with --env=VALUE.</source>
+        <translation>Environnement non fourni ! Renseignez-le avec --env=VALUE.</translation>
+    </message>
+    <message>
+        <source>Environment Name</source>
+        <translation>Nom de l'environnement</translation>
+    </message>
+    <message>
+        <source>Comment</source>
+        <translation>Commentaire</translation>
+    </message>
+    <message>
+        <source>Environments list :</source>
+        <translation>Liste des environnements :</translation>
+    </message>
+    <message>
+        <source>Starting environment switching...</source>
+        <translation>Début du changement d'environnement...</translation>
+    </message>
+    <message>
+        <source>Environment switching complete !</source>
+        <translation>Changement d'environnement terminé !</translation>
     </message>
 </context>
 </TS>

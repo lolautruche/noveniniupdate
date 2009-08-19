@@ -1,5 +1,4 @@
 <?php
-
 //
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
 // SOFTWARE NAME: Noven INI Update
@@ -25,32 +24,40 @@
 // ## END COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
 //
 
-$Module = array('name' => 'noveniniupdate');
-
-$ViewList = array();
-
-/*
- * Environment selection / list
- */
-$ViewList['view'] = array(
-	'script'					=>	'view.php',
-	'params'					=> 	array(),
-	'unordered_params'			=> 	array( 'update' => 'Update' ),	
-	'single_post_actions'		=> 	array(  'updateenvbutton' => 'UpdateEnvButton' ),
-	'post_action_parameters'	=> 	array(),
-	'default_navigation_part'	=> 'noveniniupdatenavigationpart',
-);
-
-/*
- * Edit INI
- */
-$ViewList['edit'] = array(
-	'script'					=>	'edit.php',
-	'params'					=> 	array(),
-	'unordered_params'          =>  array(  'env' => 'Env', 'line' => 'Line', 'path' => 'Path' ),	
-	'single_post_actions'		=>  array(  'writesetting'	=> 'WriteSetting',
-										    'cancelsetting'	=> 'CancelSetting' ),
-	'post_action_parameters'	=> 	array(),
-	'default_navigation_part'	=> 'noveniniupdatenavigationpart',
-);
-
+class NovenConfigUpdaterException extends Exception
+{
+	const XML_FILE_UNAVAILABLE = -1,
+		  XML_FILE_UNREADABLE = -2,
+		  XML_PARSE_ERROR = -3;
+		  
+	const UNSUPPORTED_ENV = -10,
+		  UNSUPPORTED_DATATYPE = -11,
+		  UNSUPPORTED_FILE_HANDLER = -12;
+		  
+	const FILE_IO_ERROR = -20;
+	
+	const CLUSTER_NOT_CONFIGURED = -30;
+	
+	public function __toString()
+	{
+		return __CLASS__ . " [$this->code] => $this->message\n";
+	}
+	
+	/**
+	 * SimpleXML errors handling
+	 *
+	 * @param int $errno PHP error number
+	 * @param string $errstr error message
+	 * @param string $errfile
+	 * @param int $errline
+	 * @return bool
+	 * @throws NovenINIUpdaterException
+	 */
+	public static function HandleSimpleXMLError($errno, $errstr, $errfile, $errline)
+	{
+		if (substr_count($errstr,"SimpleXMLElement::__construct()")>0)
+			throw new self($errstr, self::XML_PARSE_ERROR);
+		else
+			return false;
+	}
+}

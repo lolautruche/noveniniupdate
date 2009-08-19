@@ -1,5 +1,4 @@
 <?php
-
 //
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
 // SOFTWARE NAME: Noven INI Update
@@ -25,32 +24,24 @@
 // ## END COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
 //
 
-$Module = array('name' => 'noveniniupdate');
-
-$ViewList = array();
-
-/*
- * Environment selection / list
+/**
+ * Interface for file updaters (INI, PHP, ...)
+ * @author Jerome Vieilledent
+ * @package noveniniupdate
  */
-$ViewList['view'] = array(
-	'script'					=>	'view.php',
-	'params'					=> 	array(),
-	'unordered_params'			=> 	array( 'update' => 'Update' ),	
-	'single_post_actions'		=> 	array(  'updateenvbutton' => 'UpdateEnvButton' ),
-	'post_action_parameters'	=> 	array(),
-	'default_navigation_part'	=> 'noveniniupdatenavigationpart',
-);
-
-/*
- * Edit INI
- */
-$ViewList['edit'] = array(
-	'script'					=>	'edit.php',
-	'params'					=> 	array(),
-	'unordered_params'          =>  array(  'env' => 'Env', 'line' => 'Line', 'path' => 'Path' ),	
-	'single_post_actions'		=>  array(  'writesetting'	=> 'WriteSetting',
-										    'cancelsetting'	=> 'CancelSetting' ),
-	'post_action_parameters'	=> 	array(),
-	'default_navigation_part'	=> 'noveniniupdatenavigationpart',
-);
-
+interface INovenFileUpdater
+{
+	/**
+	 * Returns params for a given environment
+	 * @param string $env
+	 * @return array
+	 */
+	public function getParamsByEnv($env);
+	
+	/**
+	 * Sets the environment
+	 * @param string $env
+	 * @return void
+	 */
+	public function setEnv($env);
+}

@@ -37,11 +37,11 @@ function confirmUpdateEnv(curEnv) {ldelim}
 		<div class="box-mr">
 			<div class="box-content">
 				<div class="context-attributes">
-					{if $errors|count}
-					<div class="object"><p><ul>{foreach $errors as $error}<li>{$error|wash}</li>{/foreach}</ul></p></div>
+					{if is_set($error_message)}
+					<div class="object"><p><ul><li>{$error_message|wash}</li></ul></p></div>
 					{/if}
 					
-					{if $confirm_label}
+					{if is_set($confirm_label)}
 					<div class="object"><p style="color:red;"><strong>{$confirm_label}</strong></p></div>
 					{/if}					
 					
@@ -139,8 +139,8 @@ function confirmUpdateEnv(curEnv) {ldelim}
 					       		$i = 1
 					       		$cpt_global = 1
 					       	}
-				       		{foreach $tab as $t}
-				       		{if gt( $i, 2 )}
+				       		{foreach $tab.lines as $t}
+				       		{*if gt( $i, 2 )*}
 				       		<tr valign="top" class="{$seq}">
 								<td colspan="2">		            
 				        			&nbsp;
@@ -148,19 +148,37 @@ function confirmUpdateEnv(curEnv) {ldelim}
 				            	<td width="1">[{$t['block']}]</td>
 					            <td width="1">{$t['type']}</td>
 					            <td>{$t['name']}</td>
-					            <td align="left" width="1">{$t['value']|crlf2br}</td>
+					            <td align="left" width="1">{$t['value']|nl2br}</td>
 					            <td width="1">
-						            <a href={concat('noveniniupdate/edit/(env)/', $selected_env, '/(path)/', $tab['path'], '/(line)/', $cpt_global)|ezurl}>
+						            {* Disable the edit button because the edit function is useless compared to the built-in INI edit interface. *}
+						            {*<a href={concat('noveniniupdate/edit/(env)/', $selected_env, '/(path)/', $tab['path'], '/(line)/', $cpt_global)|ezurl}>
 		                        		<img src={"edit.gif"|ezimage} alt="{'Edit'|i18n('extension/noveniniupdate/view')}" />
-		                        	</a>
+		                        	</a>*}
 					            </td>
 					        </tr>
 					        {set $cpt_global = $cpt_global|inc}
-					        {/if}
-					        {set $i = $i|inc}
+					        {*/if*}
+					        {*set $i = $i|inc*}
 					    	{/foreach}
 				    	{/foreach}
 					</table>
+					
+					{* Cluster Mode settings *}
+				{if $cluster_params}
+					<h3>{'Cluster mode settings for selected environment "%env"'|i18n('extension/noveniniupdate/view', '', hash('%env', $selected_env))}</h3>
+					<table class="list" width="100%" cellspacing="0" cellpadding="0" border="0">
+			    		<tr>
+							<th>{'Cluster param name'|i18n('extension/noveniniupdate/view')}</th>
+					        <th>{'Cluster param value'|i18n( 'extension/noveniniupdate/view' )}</th>
+					    </tr>
+					{foreach $cluster_params as $param sequence array('bgdark', 'bglight') as $seq}
+					    <tr valign="top" class="{$seq}">
+					        <td>{$param.name}</td>
+					        <td>{$param.value}</td>
+					    </tr>
+					{/foreach}
+					</table>
+				{/if}
 				</div>
 			</div>
 		</div>

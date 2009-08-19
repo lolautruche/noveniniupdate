@@ -8,7 +8,7 @@ Tabs[]=noveniniupdate
 
 [Topmenu_noveniniupdate]
 NavigationPartIdentifier=noveniniupdatenavigationpart
-Name=Advanced INI Params
+Name=INI Config
 Tooltip=Edit INI files depending on your environment (ie. prod, preprod...)
 Tooltip=Noven : édition de paramètres avancés INI en fonction de l'environnement
 URL[]

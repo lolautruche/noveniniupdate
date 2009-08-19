@@ -2,7 +2,7 @@
 //
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
 // SOFTWARE NAME: Noven INI Update
-// SOFTWARE RELEASE: $$$VERSION$$$
+// SOFTWARE RELEASE: @@@VERSION@@@
 // COPYRIGHT NOTICE: Copyright (C) 2009 - Jean-Luc Nguyen, Jerome Vieilledent - Noven.
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
@@ -29,7 +29,7 @@ class noveniniupdateInfo
 	static function info()
     {
         return array( 'Name'      => 'Noven INI Update',
-                      'Version'   => '$$$VERSION$$$',
+                      'Version'   => '@@@VERSION@@@',
                       'Copyright' => 'Copyright © 2009 Jean-Luc Nguyen, Jérôme Vieilledent - Noven.',
                       'License'   => 'GNU General Public License v2.0',
                       'Info'	  => '<a href="http://projects.ez.no/noveniniupdate" target="_blank">http://projects.ez.no/noveniniupdate</a>'

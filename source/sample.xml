@@ -1,0 +1,199 @@
+<xml>
+	<envs>
+		<env name="local" comment="Local"/>
+        <env name="dev" comment="Dev"/>
+		<env name="preprod" comment="Pré-production"/>
+		<env name="prod" comment="Production"/>
+	</envs>
+	<files>
+		<file path="extension/myextension/settings/test1.ini" comment="Test 1 INI File">
+
+			<line env="local" block="FallBackSettings" type="string" name="XmlPath" value="/var/www/mywebsiteproject/_online/var/fallback" comment=""/>
+            <line env="dev" block="FallBackSettings" type="string" name="XmlPath" value="/home/www/mywebsiteproject/var/fallback" comment=""/>
+			<line env="preprod" block="FallBackSettings" type="string" name="XmlPath" value="/share/www/mywebsiteproject.fr/incoming" comment=""/>
+			<line env="prod" block="FallBackSettings" type="string" name="XmlPath" value="/share/www/mywebsiteproject.fr/incoming" comment=""/>
+
+			<line env="local" block="General" type="numeric" name="AntenneValue" value="1" comment=""/>
+            <line env="dev" block="General" type="numeric" name="AntenneValue" value="2" comment=""/>
+			<line env="preprod" block="General" type="numeric" name="AntenneValue" value="33" comment=""/>
+			<line env="prod" block="General" type="numeric" name="AntenneValue" value="99" comment=""/>
+
+			<line env="local" block="FallBackSettings" type="string" name="ModulePath" value="http://local.mywebsiteproject.fr:21080/cp/input" comment=""/>
+            <line env="dev" block="FallBackSettings" type="string" name="ModulePath" value="http://dev.mywebsiteproject.fr:21080/cp/input" comment=""/>
+			<line env="preprod" block="FallBackSettings" type="string" name="ModulePath" value="http://preprod.mywebsiteproject.fr:21080/cp/input" comment=""/>
+			<line env="prod" block="FallBackSettings" type="string" name="ModulePath" value="http://mywebsiteproject.fr:21080/cp/input" comment=""/>
+
+			<line env="local" block="FallBackSettings" type="array" name="ArrayOneDim" comment="Simple Array Sample">
+<![CDATA[
+=MyFirstValueOfMyArray
+=MySecondValueOfMyArray
+=MyThirdValueOfMyArray
+=MyFourthValueOfMyArray
+]]>
+            </line>
+            <line env="dev" block="FallBackSettings" type="array" name="ArrayOneDim" comment="Simple Array Sample">
+<![CDATA[
+=MyFirstValueOfMyArrayDev
+=MySecondValueOfMyArrayDev
+=MyThirdValueOfMyArrayDev
+=MyFourthValueOfMyArrayDev
+]]>
+            </line>
+			<line env="preprod" block="FallBackSettings" type="array" name="ArrayOneDim" comment="Simple Array Sample">
+<![CDATA[
+=MyFirstValueOfMyArrayPreprod
+=MySecondValueOfMyArrayPreprod
+=MyThirdValueOfMyArrayPreprod
+=MyFourthValueOfMyArrayPreprod
+]]>
+            </line>
+			<line env="prod" block="FallBackSettings" type="array" name="ArrayOneDim" comment="Simple Array Sample">
+<![CDATA[
+=MyFirstValueOfMyArrayProd
+=MySecondValueOfMyArrayProd
+=MyThirdValueOfMyArrayProd
+=MyFourthValueOfMyArrayProd
+]]>
+            </line>
+
+			<line env="local" block="FallBackSettings" type="array" name="ArrayTwoDim" comment="Associative Array Sample">
+<![CDATA[
+[bird]=MyFirstValueOfMyArray
+[car]=MySecondValueOfMyArray
+[tel]=MyThirdValueOfMyArray
+[cat]=MyFourthValueOfMyArray
+]]>
+            </line>
+            <line env="dev" block="FallBackSettings" type="array" name="ArrayTwoDim" comment="Associative Array Sample">
+<![CDATA[
+[bird]=MyFirstValueOfMyArrayDev
+[car]=MySecondValueOfMyArrayDev
+[tel]=MyThirdValueOfMyArrayDev
+[cat]=MyFourthValueOfMyArrayDev
+]]>
+            </line>
+			<line env="preprod" block="FallBackSettings" type="array" name="ArrayTwoDim" comment="Associative Array Sample">
+<![CDATA[
+[bird]=MyFirstValueOfMyArrayPreprod
+[car]=MySecondValueOfMyArrayPreprod
+[tel]=MyThirdValueOfMyArrayPreprod
+[cat]=MyFourthValueOfMyArrayPreprod
+]]>
+            </line>
+			<line env="prod" block="FallBackSettings" type="array" name="ArrayTwoDim" comment="Associative Array Sample">
+<![CDATA[
+[bird]=MyFirstValueOfMyArrayProd
+[car]=MySecondValueOfMyArrayProd
+[tel]=MyThirdValueOfMyArrayProd
+[cat]=MyFourthValueOfMyArrayProd
+]]>
+            </line>
+
+		</file>
+
+		<file path="extension/myextension/settings/file.ini.append.php" comment="file.ini File">
+
+			<line env="local" block="ClusteringSettings" type="string" name="FileHandler" value="ezdb" comment=""/>
+            <line env="dev" block="ClusteringSettings" type="string" name="FileHandler" value="ezdb" comment=""/>
+			<line env="preprod" block="ClusteringSettings" type="string" name="FileHandler" value="ezfs" comment=""/>
+			<line env="prod" block="ClusteringSettings" type="string" name="FileHandler" value="ezfs" comment=""/>
+
+		</file>
+
+		<file path="settings/override/image.ini.append.php" comment="Resize parameters">
+
+			<line env="local" block="ImageMagick" type="string" name="ExecutablePath" value="/usr/bin" comment="Path to ImageMagick"/>
+            <line env="dev" block="ImageMagick" type="string" name="ExecutablePath" value="/usr/local/bin" comment="Path to ImageMagick"/>
+			<line env="preprod" block="ImageMagick" type="string" name="ExecutablePath" value="/appli/ImageMagick/bin" comment="Path to ImageMagick"/>
+			<line env="prod" block="ImageMagick" type="string" name="ExecutablePath" value="/appli/ImageMagick/bin" comment="Path to ImageMagick"/>
+
+			<line env="local" block="ImageMagick" type="string" name="Executable" value="convert" comment="Binary ImageMagick"/>
+            <line env="dev" block="ImageMagick" type="string" name="Executable" value="convert" comment="Binary ImageMagick"/>
+			<line env="preprod" block="ImageMagick" type="string" name="Executable" value="convert" comment="Binary ImageMagick"/>			
+			<line env="prod" block="ImageMagick" type="string" name="Executable" value="convert" comment="Binary ImageMagick"/>		
+	
+		</file>
+
+		<file path="settings/override/site.ini.append.php" comment="">
+
+			<line env="local" block="MailSettings" type="string" name="Transport" value="SMTP" comment=""/>
+			<line env="dev" block="MailSettings" type="string" name="Transport" value="sendmail" comment=""/>
+			<line env="preprod" block="MailSettings" type="string" name="Transport" value="sendmail" comment=""/>
+			<line env="prod" block="MailSettings" type="string" name="Transport" value="sendmail" comment=""/>
+
+			<line env="local" block="MailSettings" type="string" name="TransportServer" value="smtp.orange.fr" comment="SMTP for local"/>
+			<line env="dev" block="MailSettings" type="string" name="TransportServer" value=" " comment=""/>
+			<line env="preprod" block="MailSettings" type="string" name="TransportServer" value=" " comment=""/>
+			<line env="prod" block="MailSettings" type="string" name="TransportServer" value=" " comment=""/>
+
+		</file>		
+
+		<file path="extension/myextension/settings/site.ini.append.php" comment="">
+
+			<line env="local" block="DatabaseSettings" type="string" name="Server" value="localhost" comment=""/>
+			<line env="dev" block="DatabaseSettings" type="string" name="Server" value="localhost" comment=""/>
+			<line env="preprod" block="DatabaseSettings" type="string" name="Server" value="preprodlocalhost" comment=""/>
+			<line env="prod" block="DatabaseSettings" type="string" name="Server" value="prodlocalhost" comment=""/>
+
+			<line env="local" block="DatabaseSettings" type="string" name="Port" value=" " comment=""/>
+			<line env="dev" block="DatabaseSettings" type="string" name="Port" value=" " comment=""/>
+			<line env="preprod" block="DatabaseSettings" type="string" name="Port" value="3306" comment=""/>
+			<line env="prod" block="DatabaseSettings" type="string" name="Port" value="3306" comment=""/>
+
+			<line env="local" block="DatabaseSettings" type="string" name="User" value="app_user" comment=""/>
+			<line env="dev" block="DatabaseSettings" type="string" name="User" value="app_user" comment=""/>
+			<line env="preprod" block="DatabaseSettings" type="string" name="User" value="preprod_app_user" comment=""/>
+			<line env="prod" block="DatabaseSettings" type="string" name="User" value="prod_app_user" comment=""/>
+
+			<line env="local" block="DatabaseSettings" type="string" name="Password" value="app_pass" comment=""/>
+			<line env="dev" block="DatabaseSettings" type="string" name="Password" value="app_pass" comment=""/>
+			<line env="preprod" block="DatabaseSettings" type="string" name="Password" value="app_pass" comment=""/>
+			<line env="prod" block="DatabaseSettings" type="string" name="Password" value="app_pass" comment=""/>
+
+			<line env="local" block="SiteSettings" type="string" name="SiteURL" value="local.mywebsiteproject.fr" comment=""/>
+			<line env="dev" block="SiteSettings" type="string" name="SiteURL" value="dev.mywebsiteproject.fr" comment=""/>
+			<line env="preprod" block="SiteSettings" type="string" name="SiteURL" value="preprod.mywebsiteproject.fr" comment=""/>
+			<line env="prod" block="SiteSettings" type="string" name="SiteURL" value="mywebsiteproject.fr" comment=""/>
+
+			<line env="local" block="SiteSettings" type="string" name="AdminSiteURL" value="admin.local.mywebsiteproject.fr" comment=""/>
+			<line env="dev" block="SiteSettings" type="string" name="AdminSiteURL" value="admin.dev.mywebsiteproject.fr" comment=""/>
+			<line env="preprod" block="SiteSettings" type="string" name="AdminSiteURL" value="preprod.preprod.mywebsiteproject.fr" comment=""/>
+			<line env="prod" block="SiteSettings" type="string" name="AdminSiteURL" value="admin.mywebsiteproject.fr" comment=""/>
+
+			<line env="local" block="TipAFriend" type="string" name="FromEmail" value="noveniniupdate+from@gmail.com" comment=""/>
+			<line env="dev" block="TipAFriend" type="string" name="FromEmail" value="noveniniupdate@gmail.com" comment=""/>
+			<line env="preprod" block="TipAFriend" type="string" name="FromEmail" value="noveniniupdate@gmail.com" comment=""/>
+			<line env="prod" block="TipAFriend" type="string" name="FromEmail" value="noveniniupdate@gmail.com" comment=""/>
+
+		</file>
+
+		<file path="extension/myextension/settings/siteaccess/site_public/site.ini.append.php" comment="INI File front-office">
+
+			<line env="local" block="SiteSettings" type="string" name="SiteURL" value="local.mywebsiteproject.fr" comment=""/>
+			<line env="dev" block="SiteSettings" type="string" name="SiteURL" value="dev.mywebsiteproject.fr" comment=""/>
+			<line env="preprod" block="SiteSettings" type="string" name="SiteURL" value="preprod.mywebsiteproject.fr" comment=""/>
+			<line env="prod" block="SiteSettings" type="string" name="SiteURL" value="mywebsiteproject.fr" comment=""/>
+
+			<line env="local" block="SiteSettings" type="string" name="AdminSiteURL" value="admin.local.mywebsiteproject.fr" comment=""/>
+			<line env="dev" block="SiteSettings" type="string" name="AdminSiteURL" value="admin.dev.mywebsiteproject.fr" comment=""/>
+			<line env="preprod" block="SiteSettings" type="string" name="AdminSiteURL" value="preprod.preprod.mywebsiteproject.fr" comment=""/>
+			<line env="prod" block="SiteSettings" type="string" name="AdminSiteURL" value="admin.mywebsiteproject.fr" comment=""/>
+
+			<line env="local" block="UserSettings" type="string" name="RegistrationEmail" value="noveniniupdate+from@gmail.com" comment=""/>
+			<line env="dev" block="UserSettings" type="string" name="RegistrationEmail" value="noveniniupdate@gmail.com" comment=""/>
+			<line env="preprod" block="UserSettings" type="string" name="RegistrationEmail" value="noveniniupdate@gmail.com" comment=""/>
+			<line env="prod" block="UserSettings" type="string" name="RegistrationEmail" value="noveniniupdate@gmail.com" comment=""/>
+        
+        </file>
+
+		<file path="extension/myextension/settings/siteaccess/site_restricted/site.ini.append.php" comment="Fichier ini back-office">
+
+			<line env="local" block="SiteSettings" type="string" name="SiteURL" value="local.mywebsiteproject.fr" comment=""/>
+			<line env="dev" block="SiteSettings" type="string" name="SiteURL" value="dev.mywebsiteproject.fr" comment=""/>
+			<line env="preprod" block="SiteSettings" type="string" name="SiteURL" value="preprod.mywebsiteproject.fr" comment=""/>
+			<line env="prod" block="SiteSettings" type="string" name="SiteURL" value="mywebsiteproject.fr" comment=""/>
+        
+        </file>
+
+	</files>
+</xml>

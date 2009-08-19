@@ -1,0 +1,23 @@
+2009 Jean-Luc Nguyen, Noven
+
+1/ Introduction
+
+This extension allows to update INI files from an XML source. It uses default INI update system on eZ backoffice. It is mostly useful for update INI files depending on the website environment.
+
+2/ Installation
+
+* Download the compressed file under /extension directory and uncompress it.
+* Activate the extension.
+* Clear the caches
+
+3/ Configuration
+
+Edit the XML file with your needs, which path is defined in /extension/noveniniupdate/setting/noveniniupdate.ini, variable: XmlContent (please make an override). The XML sample is here: /extension/noveniniupdate/source/sample.xml. 
+Be sure to get the same XML structure, only values that are different depending on the environment and check all values.
+
+4/ How to Use
+
+* You should have a new tab on the backoffice.
+* Select the environment where to update the INI files defined on the XML file.
+* You may edit one by one each value variable, or update INI files by once.
+* You may check the new values on the setup tab, under INI parameters.

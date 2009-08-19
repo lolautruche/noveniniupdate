@@ -37,7 +37,7 @@
         <exec executable="${svn.exec}" failonerror="true">
 			<arg value="export"/>
 			<arg value="${svn.url.export}"/>
-			<arg value="${build.dir.dist}"/>
+			<arg value="${build.dir.dist.extension}"/>
         	<arg value="--force"/>
 		</exec>
 	</target>
@@ -45,6 +45,7 @@
 	<target name="init" depends="clean" description="Initialization">
 		<mkdir dir="${build.dir}"/>
 		<mkdir dir="${build.dir.dist}"/>
+		<mkdir dir="${build.dir.dist.extension}"/>
 	</target>
 	
 	<target name="clean" description="Build cleaning">

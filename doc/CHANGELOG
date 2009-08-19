@@ -1,0 +1,10 @@
+2.0
+-----------------
+Global refactoring (creation of classes, interface, exception...).
+CLI script.
+Support of Cluster mode (configuration in a separate tag in XML file, also updates index_cluster.php).
+Deletion of ability to edit an INI setting before switching => duplicates the native INI editing interface in the admin.
+
+1.0
+-----------------
+Initial release

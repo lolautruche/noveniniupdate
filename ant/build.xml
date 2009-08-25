@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="Export SVN" default="default" basedir=".">
-	
-	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
-	  <classpath>
-    	<pathelement location="${ant.library.dir}/ant-contrib/ant-contrib-1.0b3.jar"/>
-	  </classpath>
-	</taskdef>
 
 	<!-- Conf loading -->
 	<property file="build.properties"/>
@@ -17,19 +11,13 @@
 		- ant package		=> Make a SVN export and builds the final package</echo>
 		
 		<echo>Configure all SVN settings and other stuffs in build.properties</echo>
-		
-		<echo>Lib dependencies (install the jar files in ${ant.library.dir}) : 
-		- ant-contrib		=> http://ant-contrib.sourceforge.net
-		- jakarta-regexp	=> http://jakarta.apache.org/regexp/
-		- jakarta-oro		=> http://jakarta.apache.org/oro/
-		- commons-net		=> http://jakarta.apache.org/commons/net/index.html</echo>
 	</target>
 	
 	<target name="package" depends="init,export" description="Builds the package">
 		<replace dir="${build.dir.dist}" token="@@@VERSION@@@" value="${build.version}">
 			<include name="**/*.php"/>
 		</replace>
-		<zip destfile="${build.dir}/noveniniupdate.zip" basedir="${build.dir.dist}" excludes="ant/**"/>
+		<zip destfile="${build.dir}/noveniniupdate.zip" basedir="${build.dir.dist}" excludes="${build.dir.dist.extension}/ant/**"/>
 	</target>
 
 	<target name="export" description="Exports the extension via SVN">
@@ -37,7 +25,7 @@
         <exec executable="${svn.exec}" failonerror="true">
 			<arg value="export"/>
 			<arg value="${svn.url.export}"/>
-			<arg value="${build.dir.dist.extension}"/>
+			<arg value="${build.dir.dist}/${build.dir.dist.extension}"/>
         	<arg value="--force"/>
 		</exec>
 	</target>
@@ -45,7 +33,7 @@
 	<target name="init" depends="clean" description="Initialization">
 		<mkdir dir="${build.dir}"/>
 		<mkdir dir="${build.dir.dist}"/>
-		<mkdir dir="${build.dir.dist.extension}"/>
+		<mkdir dir="${build.dir.dist}/${build.dir.dist.extension}"/>
 	</target>
 	
 	<target name="clean" description="Build cleaning">

@@ -35,6 +35,22 @@ The XML sample is here: *extension/noveniniupdate/source/sample.xml*.
 Be sure to get the same XML structure, only values that are different depending on the environment and check all values.
 If you aren't using the Cluster Mode, you can ignore the *<ClusterMode>* tag in the XML file.
 
+Warning
+-------
+Some INI settings can be marked as read only in site.ini.
+Check site.ini **[eZINISettings]** / *ReadonlySettingList[]*.
+
+Default values are :
+
+*site.ini*
+::
+
+  [eZINISettings]
+  ReadonlySettingList[]
+  ReadonlySettingList[]=template.ini/PHP/PHPOperatorList
+  ReadonlySettingList[]=image.ini/ImageMagick/ExecutablePath
+  ReadonlySettingList[]=image.ini/ImageMagick/Executable
+
 
 How to Use in the Backoffice
 ============================

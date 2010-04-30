@@ -104,7 +104,7 @@ class NovenINIUpdateCLIFormater
 	
 	/**
 	 * Formats the params list for the CLI
-	 * @param $aFiles
+	 * @param array $aFiles
 	 * @return void
 	 * @static
 	 */
@@ -133,12 +133,17 @@ class NovenINIUpdateCLIFormater
 		}
 	}
 	
-	public static function formatClusterParamsList(array $aParams)
+	/**
+	 * Formats cluster params list for the CLI
+	 * @param array $aParams
+	 * @return void
+	 * @static
+	 */
+	public static function formatClusterParamsList(array $aParams, $title='Cluster Params')
 	{
 		if($aParams)
 		{
 			$formater = new self();
-			$title = 'Cluster Params';
 			$aData = array(
 				array(
 					'Name',
@@ -153,6 +158,71 @@ class NovenINIUpdateCLIFormater
 			
 			// Now ouput params for the current file
 			$formater->formatTable($aData, $title);
+		}
+	}
+	
+	/**
+	 * Formats params diff between current INI values and those to be applied for requested environment
+	 * @param array $aCurrentParamsFiles
+	 * @return void
+	 * @static
+	 */
+	public static function formatParamsDiff(array $aEnvParamsFiles)
+	{
+		$formater = new self();
+		
+		foreach($aEnvParamsFiles as $file)
+		{
+			$iniFile = basename((string)$file['path']);
+			$iniFile = str_replace('.append.php', '', $iniFile);
+			$ini = eZINI::instance($iniFile);
+			
+			$title = $file['path'].' => '.$file['comment'];
+			$aData = array(
+				array( // Table header
+					'Block', 
+					'Param',
+					'Current Value',
+					'Modified Value'
+				)
+			);
+			
+			foreach($file['lines'] as $line)
+			{
+				$currentValue = $ini->variable((string)$line['block'], (string)$line['name']);
+				$aRow = array($line['block'], $line['name'], $currentValue, $line['value']);
+				$aData[] = $aRow;
+			}
+			
+			// Now ouput params for the current file
+			$formater->formatTable($aData, $title);
+		}
+	}
+	
+	public static function formatClusterParamsDiff(array $aClusterDiffParams)
+	{
+		$formater = new self();
+		
+		// First handle "current" cluster params
+		if($aClusterDiffParams['current'])
+		{
+			self::formatClusterParamsList($aClusterDiffParams['current'], 'Current Cluster Params');
+		}
+		else
+		{
+			$formater->output->outputText('No current cluster params found.');
+			$formater->output->outputLine();
+		}
+		
+		// Handling new cluster params
+		if($aClusterDiffParams['new'])
+		{
+			self::formatClusterParamsList($aClusterDiffParams['new'], 'Modified Cluster Params');
+		}
+		else
+		{
+			$formater->output->outputText('No cluster params found for requested environment.');
+			$formater->output->outputLine();
 		}
 	}
 }

@@ -218,4 +218,15 @@ class NovenClusterUpdater extends NovenConfigAbstractUpdater implements INovenFi
 		
 		return $aParams;
 	}
+	
+	public function getDiffParamsByEnv($env)
+	{
+		$currentEnv = $this->getCurrentEnvironment();
+		$aResult = array(
+			'current'	=> $this->getParamsByEnv($currentEnv),
+			'new'		=> $this->getParamsByEnv($env) 
+		);
+		
+		return $aResult;
+	}
 }

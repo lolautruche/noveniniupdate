@@ -43,11 +43,12 @@ $output->formats->error->color = 'red';
 
 // Options handling
 $options = $script->getOptions(
-	'[env:][list-envs][list-params]',
+	'[env:][list-envs][list-params][diff][backup]',
 	'',
 	array( 'env'			=> ezi18n('extension/noveniniupdate/script', 'Environment identifier for switching INI params. Use --list-envs switch to list available environments.'),
 		   'list-envs'		=> ezi18n('extension/noveniniupdate/script', 'Lists available environmnents.'),
-		   'list-params'	=> ezi18n('extension/noveniniupdate/script', 'Lists configured params for given environment.')
+		   'list-params'	=> ezi18n('extension/noveniniupdate/script', 'Lists configured params for given environment.'),
+		   'diff'			=> ezi18n('extension/noveniniupdate/script', 'Displays the difference between current params and those to be applied'),
 	)
 );
 
@@ -72,6 +73,17 @@ try
 		$aClusterParams = $clusterUpdater->getParamsByEnv($options['env']);
 		NovenINIUpdateCLIFormater::formatClusterParamsList($aClusterParams);
 	}
+	else if($options['diff']) // Shows a diff between current params and params for given env
+	{
+		if(!$options['env'])
+			throw new Exception(ezi18n('extension/noveniniupdate/script', 'Environment not set ! Please set it with --env=VALUE'));
+		
+		$aParams = $iniUpdater->getParamsByEnv($options['env']);
+		NovenINIUpdateCLIFormater::formatParamsDiff($aParams);
+		
+		$aClusterDiffParams = $clusterUpdater->getDiffParamsByEnv($options['env']);
+		NovenINIUpdateCLIFormater::formatClusterParamsDiff($aClusterDiffParams);
+	}
 	else // Sets the environment
 	{
 		if(!$options['env'])
@@ -80,6 +92,7 @@ try
 		$cli->notice(ezi18n('extension/noveniniupdate/script', 'Starting environment switching...'));
 		$iniUpdater->setEnv($options['env']);
 		$clusterUpdater->setEnv($options['env']);
+		$iniUpdater->storeEnvironment($options['env']);
 		$cli->notice(ezi18n('extension/noveniniupdate/script', 'Environment switching complete !'));
 	}
 	

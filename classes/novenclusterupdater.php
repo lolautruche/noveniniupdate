@@ -89,6 +89,7 @@ class NovenClusterUpdater extends NovenConfigAbstractUpdater implements INovenFi
 					
 				case 'ezdb':
 				case 'eZDBFileHandler':
+				case 'eZDFSFileHandler':
 					$this->updateDBFileHandler($clusterConf, $fileHandler);
 					break;
 					

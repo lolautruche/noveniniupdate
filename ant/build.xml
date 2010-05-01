@@ -18,9 +18,9 @@
 			<include name="**/*.php"/>
 		</replace>
 		<tstamp>
-			<format property="build.year" pattern="yyyy"/>
+			<format property="BUILD_YEAR" pattern="yyyy"/>
 		</tstamp>
-		<replace dir="${build.dir.dist}" token="@@@YEAR@@@" value="${buid.year}">
+		<replace dir="${build.dir.dist}" token="@@@YEAR@@@" value="${BUILD_YEAR}">
 			<include name="**/*.php"/>
 		</replace>
 		<zip destfile="${build.dir}/noveniniupdate.zip" basedir="${build.dir.dist}" excludes="${build.dir.dist.extension}/ant/**"/>

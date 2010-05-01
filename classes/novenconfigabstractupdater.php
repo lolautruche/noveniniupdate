@@ -3,7 +3,7 @@
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
 // SOFTWARE NAME: Noven INI Update
 // SOFTWARE RELEASE: @@@VERSION@@@
-// COPYRIGHT NOTICE: Copyright (C) 2009 - Jean-Luc Nguyen, Jerome Vieilledent - Noven.
+// COPYRIGHT NOTICE: Copyright (C) @@@YEAR@@@ - Jean-Luc Nguyen, Jerome Vieilledent - Noven.
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
 //   This program is free software; you can redistribute it and/or
@@ -56,6 +56,22 @@ abstract class NovenConfigAbstractUpdater
 	protected $aEnvs = array();
 	
 	/**
+	 * Backup directory
+	 * @var string
+	 */
+	protected $backupDir;
+	
+	/**
+	 * @var bool
+	 */
+	protected $bDateTimeBackupDir;
+	
+	/**
+	 * @var string
+	 */
+	protected $dateTimeBackupDirPattern;
+	
+	/**
 	 * Constructor
 	 * @return NovenConfigAbstractUpdater
 	 * @throws NovenConfigUpdaterException
@@ -74,6 +90,10 @@ abstract class NovenConfigAbstractUpdater
 		{
 			$this->aEnvs[] = $env;
 		}
+		
+		$this->backupDir = $this->updateINI->variable('BackupSettings', 'BackupDir');
+		$this->bDateTimeBackupDir = $this->updateINI->variable('BackupSettings', 'DateTimeBackupDir') === 'enabled';
+		$this->dateTimeBackupDirPattern = $this->updateINI->variable('BackupSettings', 'DateTimeBackupDirPattern');
 	}
 	
 	/**
@@ -169,5 +189,73 @@ abstract class NovenConfigAbstractUpdater
 		}
 		
 		return $currentEnv;
+	}
+	
+	/**
+	 * Does a backup of given config file
+	 * eZClusterFileHandler is not used ON PURPOSE, as config files must be present on the FS
+	 * @param string $filePath
+	 * @return bool
+	 */
+	protected function doBackup($filePath)
+	{
+		try
+		{
+			// If $filePath ends with .ini, we append '.append.php'
+			// Backuping "default" ini files does not make sense
+			if ( strrpos( $filePath, '.ini' ) === ( strlen( $filePath ) - strlen ('.ini') ) )
+				$filePath .= '.append.php';
+			
+			// Check if given file does exists
+			if(!file_exists($filePath))
+				throw new InvalidArgumentException(ezi18n('extension/noveniniupdate/error', 
+														  'Cannot backup config file "%filePath" : it does not exist (yet)', 
+														  null, array('%filePath' => $filePath)));
+				
+			
+			$dirPosition = strrpos( $filePath, '/' ); // Check presence of directories
+			// Get dirpath only if we have intermediary directories
+			// $fileDir will be empty if backuping config.php or index_cluster.php for example
+			if($dirPosition !== false)
+				$fileDir = eZDir::dirpath($filePath);
+			else
+				$fileDir = '';
+			
+			$fileName = basename($filePath);
+			if($this->bDateTimeBackupDir) // Use of intermediary backup directory with date and time
+			{
+				$dateDirName = date($this->dateTimeBackupDirPattern);
+				$fullBackupDir = $this->backupDir.'/'.$dateDirName.'/'.$fileDir;
+			}
+			else
+			{
+				$fullBackupDir = $this->backupDir.'/'.$fileDir;
+			}
+			
+			// Create backup directory if necessary
+			if(!is_dir($fullBackupDir))
+			{
+				$backupMkDirOK = eZDir::mkdir($fullBackupDir, false, true);
+				if(!$backupMkDirOK)
+					throw new InvalidArgumentException(ezi18n('extension/noveniniupdate/error', 
+															  "Backup dir is not writable !"));
+			}
+				
+			// Now backup file and check if operation succeeded
+			$copyOK = copy($filePath, $fullBackupDir.'/'.$fileName);
+			if(!$copyOK)
+				throw new RuntimeException(ezi18n('extension/noveniniupdate/error',
+												  'Problem occurred when backuping "%originalPath" to "%destinationPath"'),
+												  null, array('%originalPath' => $filePath, '%destinationPath' => $fullBackupDir));
+												  
+			return true;
+		}
+		catch(Exception $e)
+		{
+			$errMsg = '[NovenINIUpdate] '.$e->getMessage();
+			eZLog::write($errMsg, 'error.log');
+			eZDebug::writeError($errMsg);
+			return false;
+		}
 	}
 }

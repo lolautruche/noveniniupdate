@@ -51,7 +51,7 @@ class NovenClusterUpdater extends NovenConfigAbstractUpdater implements INovenFi
 	 * (non-PHPdoc)
 	 * @see extension/noveniniupdate/classes/INovenFileUpdater#setEnv($env)
 	 */
-	public function setEnv($env)
+	public function setEnv($env, $backup)
 	{
 		// Check if <ClusterMode> is configured in XML file
 		$clusterTag = $this->xmlDoc->ClusterMode;
@@ -67,6 +67,12 @@ class NovenClusterUpdater extends NovenConfigAbstractUpdater implements INovenFi
 			$this->phpFile = $clusterTag['php'] ? $clusterTag['php'] : self::DEFAULT_PHP_FILE;
 			$iniFile = $clusterTag['ini'] ? $clusterTag['ini'] : self::DEFAULT_INI_FILE;
 			$this->iniDirPath = dirname($iniFile);
+
+			if($backup) // Do a backup if necessary
+			{
+				$this->doBackup($this->phpFile);
+				$this->doBackup($iniFile);
+			}
 			
 			// Get cluster params for given environment
 			$aClusterConf = $this->xmlDoc->xpath("//ClusterMode/cluster[@env='$env']");

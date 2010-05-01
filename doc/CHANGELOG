@@ -1,3 +1,11 @@
+2.1
+-----------------
+Fixed bug with NovenConfigAbstractUpdater::checkIsEnvSupported() => returned always true
+Implemented diff feature between current value and "to be applied" value
+Implemented backup feature (with new --backup option to CLI script)
+Environment is now stored in *ezsite_data* table 
+Added support for eZDFSFileHandler
+
 2.0
 -----------------
 Global refactoring (creation of classes, interface, exception...).

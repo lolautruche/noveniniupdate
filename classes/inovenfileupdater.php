@@ -40,8 +40,9 @@ interface INovenFileUpdater
 	
 	/**
 	 * Sets the environment
-	 * @param string $env
+	 * @param string $env Chosen environment
+	 * @param bool $backup Indicates if must do a backup before switching
 	 * @return void
 	 */
-	public function setEnv($env);
+	public function setEnv($env, $backup);
 }

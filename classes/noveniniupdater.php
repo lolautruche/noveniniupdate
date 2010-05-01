@@ -128,11 +128,12 @@ class NovenINIUpdater extends NovenConfigAbstractUpdater implements INovenFileUp
 
 	/**
 	 * Sets the environment
-	 * @param $env
+	 * @param string $env Chosen environment
+	 * @param bool $backup Indicates if must do a backup before switching 
 	 * @return void
 	 * @throws NovenConfigUpdaterException
 	 */
-	public function setEnv($env)
+	public function setEnv($env, $backup)
 	{
 		// First check if environment is supported
 		if(!$this->checkIsEnvSupported($env))
@@ -149,6 +150,11 @@ class NovenINIUpdater extends NovenConfigAbstractUpdater implements INovenFileUp
 			$iniFile = str_replace( '.append.php', '', basename($filePath) );
 			$iniFile = str_replace( '.append', '', $iniFile );
 			$iniFile = $iniFile . '.append';
+			
+			if($backup) // Do a backup if necessary
+			{
+				$this->doBackup($filePath);
+			}
 
 			// Write the params for each INI file
 			$ini = eZINI::instance( $iniFile, $path, null, null, null, true, true );
@@ -193,6 +199,7 @@ class NovenINIUpdater extends NovenConfigAbstractUpdater implements INovenFileUp
 				{
 					$ini->setVariable( $block, $settingName, $valueToWrite );
 				}
+				
 				$writeOk = $ini->save(); // Save the INI file
 				
 				if(!$writeOk)

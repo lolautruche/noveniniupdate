@@ -70,4 +70,6 @@ It uses *eZComponents Console Tools*
 Several options are available :
   * --list-envs : Lists all available environments
   * --env=VALUE --list-params : Lists all params configured for a given environment
-  * --env=VALUE : Update the INI files for the given environment
+  * --env=VALUE --diff : Shows differences between what is currently configured and what will be configured
+  * --env=VALUE : Updates the INI files for the given environment
+  * --backup : If used with *--env* option, creates a backup of your config files in your backup directory, defined in noveniniupdate.ini

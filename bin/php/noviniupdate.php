@@ -49,6 +49,7 @@ $options = $script->getOptions(
 		   'list-envs'		=> ezi18n('extension/noveniniupdate/script', 'Lists available environmnents.'),
 		   'list-params'	=> ezi18n('extension/noveniniupdate/script', 'Lists configured params for given environment.'),
 		   'diff'			=> ezi18n('extension/noveniniupdate/script', 'Displays the difference between current params and those to be applied'),
+		   'backup'			=> ezi18n('extension/noveniniupdate/script', 'Does a backup of old INI files'),
 	)
 );
 
@@ -88,11 +89,13 @@ try
 	{
 		if(!$options['env'])
 			throw new Exception(ezi18n('extension/noveniniupdate/script', 'Environment not set ! Please set it with --env=VALUE'));
+		
+		$backup = (bool)$options['backup'];
 			
 		$cli->notice(ezi18n('extension/noveniniupdate/script', 'Starting environment switching...'));
-		$iniUpdater->setEnv($options['env']);
-		$clusterUpdater->setEnv($options['env']);
-		$iniUpdater->storeEnvironment($options['env']);
+		$iniUpdater->setEnv($options['env'], $backup);
+		$clusterUpdater->setEnv($options['env'], $backup);
+		$iniUpdater->storeEnvironment($options['env']); // Stores chosen environment in DB
 		$cli->notice(ezi18n('extension/noveniniupdate/script', 'Environment switching complete !'));
 	}
 	

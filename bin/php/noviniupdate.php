@@ -57,6 +57,7 @@ try
 {
 	$iniUpdater = new NovenINIUpdater();
 	$clusterUpdater = new NovenClusterUpdater();
+	$configUpdater = new NovenConfigUpdater();
 	
 	if($options['list-envs']) // Just lists available envs
 	{
@@ -73,6 +74,9 @@ try
 		
 		$aClusterParams = $clusterUpdater->getParamsByEnv($options['env']);
 		NovenINIUpdateCLIFormater::formatClusterParamsList($aClusterParams);
+		
+		$aConfigParams = $configUpdater->getParamsByEnv($options['env']);
+		NovenINIUpdateCLIFormater::formatClusterParamsList($aConfigParams);
 	}
 	else if($options['diff']) // Shows a diff between current params and params for given env
 	{
@@ -84,6 +88,9 @@ try
 		
 		$aClusterDiffParams = $clusterUpdater->getDiffParamsByEnv($options['env']);
 		NovenINIUpdateCLIFormater::formatClusterParamsDiff($aClusterDiffParams);
+		
+		$aConfigDiffParams = $configUpdater->getDiffParamsByEnv($options['env']);
+		NovenINIUpdateCLIFormater::formatConfigParamsDiff($aConfigDiffParams);
 	}
 	else // Sets the environment
 	{
@@ -95,6 +102,7 @@ try
 		$cli->notice(ezi18n('extension/noveniniupdate/script', 'Starting environment switching...'));
 		$iniUpdater->setEnv($options['env'], $backup);
 		$clusterUpdater->setEnv($options['env'], $backup);
+		$configUpdater->setEnv($options['env'], $backup);
 		$iniUpdater->storeEnvironment($options['env']); // Stores chosen environment in DB
 		$cli->notice(ezi18n('extension/noveniniupdate/script', 'Environment switching complete !'));
 	}

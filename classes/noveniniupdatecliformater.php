@@ -199,6 +199,10 @@ class NovenINIUpdateCLIFormater
 		}
 	}
 	
+	/**
+	 * Formats cluster params diff
+	 * @param array $aClusterDiffParams
+	 */
 	public static function formatClusterParamsDiff(array $aClusterDiffParams)
 	{
 		$formater = new self();
@@ -222,6 +226,37 @@ class NovenINIUpdateCLIFormater
 		else
 		{
 			$formater->output->outputText('No cluster params found for requested environment.');
+			$formater->output->outputLine();
+		}
+	}
+	
+	/**
+	 * Formats config params diff
+	 * @param array $aConfigDiffParams
+	 */
+	public static function formatConfigParamsDiff(array $aConfigDiffParams)
+	{
+		$formater = new self();
+		
+		// First handle "current" cluster params
+		if($aConfigDiffParams['current'])
+		{
+			self::formatClusterParamsList($aConfigDiffParams['current'], 'Current Config Params');
+		}
+		else
+		{
+			$formater->output->outputText('No current config params found.');
+			$formater->output->outputLine();
+		}
+		
+		// Handling new cluster params
+		if($aConfigDiffParams['new'])
+		{
+			self::formatClusterParamsList($aConfigDiffParams['new'], 'Modified Config Params');
+		}
+		else
+		{
+			$formater->output->outputText('No config params found for requested environment.');
 			$formater->output->outputLine();
 		}
 	}

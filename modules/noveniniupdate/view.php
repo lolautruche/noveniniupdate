@@ -37,6 +37,7 @@ try
 {
 	$iniUpdater = new NovenINIUpdater();
 	$clusterUpdater = new NovenClusterUpdater();
+	$configUpdater = new NovenConfigUpdater();
 	$envs = $iniUpdater->getEnvs();
 
 	$environments = array();
@@ -55,8 +56,10 @@ try
 		// Find variables by environment
 		$tabs = $iniUpdater->getParamsByEnv($selectedEnvironment);
 		$clusterParams = $clusterUpdater->getParamsByEnv($selectedEnvironment);
+		$configParams = $configUpdater->getParamsByEnv($selectedEnvironment);
 		$tpl->setVariable( 'tabs', $tabs );
 		$tpl->setVariable( 'cluster_params', $clusterParams );
+		$tpl->setVariable( 'config_params', $configParams );
 	}
 
 	// Update current environment with XML content
@@ -67,6 +70,7 @@ try
 			$selectedEnvironment = $http->postVariable( "selectedEnvironment" );
 			$iniUpdater->setEnv($selectedEnvironment);
 			$clusterUpdater->setEnv($selectedEnvironment);
+			$configUpdater->setEnv($selectedEnvironment);
 			$Module->redirectTo( '/noveniniupdate/view/(update)/1' );
 		}
 	}

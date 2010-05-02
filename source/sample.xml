@@ -236,4 +236,57 @@
 			<FileHandler>eZFS2FileHandler</FileHandler>
 		</cluster>
 	</ClusterMode>
+	
+	<ConfigPHPFile>
+		<config env="dev">
+			<!-- For boolean values, use 0/1 and attribute isBoolean -->
+			<constant name="EZP_USE_BUNDLED_COMPONENTS" value="1" isBoolean="true"/>
+			<constant name="EZP_INI_FILEMTIME_CHECK" value="1" isBoolean="true" comment="Do not check INI Filemtime in dev environment"/>
+			<customCode comment="Embedding FooFramework from dev environment">
+<![CDATA[
+ini_set( 'include_path', ini_get( 'include_path' ). ':/opt/local/lib/php/FooFramework/' );
+]]>
+			</customCode>
+		</config>
+		<config env="preprod">
+			<constant name="EZP_USE_BUNDLED_COMPONENTS" value="1" isBoolean="true"/>
+			<constant name="EZP_INI_FILEMTIME_CHECK" value="0" isBoolean="true" comment="Better performance with setting this param to false"/>
+			<constant name="EZP_INI_FILE_PERMISSION" value="0666" isBoolean="false"/>
+			<customCode comment="My Custom Code">
+<![CDATA[
+ini_set( 'include_path', ini_get( 'include_path' ). ':/usr/lib/FooFramework/' );
+require 'Foo/ClassLoader.php';
+
+function fooAutoload( $className )
+{
+   if ( 'Foo' == substr( $className, 0, 3 ) )
+   {
+      FooClassLoader::loadClass( $className );
+   }
+}
+spl_autoload_register( 'fooAutoload' );
+]]>
+			</customCode>
+		</config>
+		<config env="prod">
+			<constant name="EZP_USE_BUNDLED_COMPONENTS" value="1" isBoolean="true"/>
+			<constant name="EZP_INI_FILEMTIME_CHECK" value="0" isBoolean="true" comment="Better performance with setting this param to false"/>
+			<constant name="EZP_INI_FILE_PERMISSION" value="0666" isBoolean="false"/>
+			<customCode comment="My Custom Code">
+<![CDATA[
+ini_set( 'include_path', ini_get( 'include_path' ). ':/usr/lib/FooFramework/' );
+require 'Foo/ClassLoader.php';
+
+function fooAutoload( $className )
+{
+   if ( 'Foo' == substr( $className, 0, 3 ) )
+   {
+      FooClassLoader::loadClass( $className );
+   }
+}
+spl_autoload_register( 'fooAutoload' );
+]]>
+			</customCode>
+		</config>
+	</ConfigPHPFile>
 </IniConfig>

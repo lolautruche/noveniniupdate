@@ -32,11 +32,13 @@ class NovenConfigUpdaterException extends Exception
 		  
 	const UNSUPPORTED_ENV = -10,
 		  UNSUPPORTED_DATATYPE = -11,
-		  UNSUPPORTED_FILE_HANDLER = -12;
+		  UNSUPPORTED_FILE_HANDLER = -12,
+		  UNSUPPORTED_XML_TAG = -13;
 		  
 	const FILE_IO_ERROR = -20;
 	
-	const CLUSTER_NOT_CONFIGURED = -30;
+	const CLUSTER_NOT_CONFIGURED = -30,
+		  CONFIG_PHP_NOT_CONFIGURED = -31;
 	
 	public function __toString()
 	{

@@ -89,6 +89,18 @@
         <source>Cluster param value</source>
         <translation>Valeur du paramètre Cluster</translation>
     </message>
+    <message>
+        <source>Config.php settings for selected environment "%env"</source>
+        <translation>Réglages du fichier config.php pour l'environnement sélectionné "%env"</translation>
+    </message>
+    <message>
+        <source>Config param name</source>
+        <translation>Nom du paramètre config</translation>
+    </message>
+    <message>
+        <source>Config param value</source>
+        <translation>Valeur du paramètre config</translation>
+    </message>
 </context>
 <context>
     <name>extension/noveniniupdate/edit</name>
@@ -178,6 +190,14 @@
     <message>
         <source>Problem occurred when backuping "%originalPath" to "%destinationPath"</source>
         <translation>Un problème est survenu lors de la sauvegarde de "%originalPath" vers "%destinationPath"</translation>
+    </message>
+    <message>
+        <source>Config PHP file is not configured for environment "%envname" in XML config file !</source>
+        <translation>Le fichier Config PHP n'est pas configuré pour l'environnement "%envname" dans le fichier XML de configuration !</translation>
+    </message>
+    <message>
+        <source>XML tag "%xmltag" is not supported by Config updater</source>
+        <translation>Le noeud XML "%xmltag" n'est pas pris en charge par le gestionnaire de Config</translation>
     </message>
 </context>
 <context>

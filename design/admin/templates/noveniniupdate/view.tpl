@@ -163,7 +163,7 @@ function confirmUpdateEnv(curEnv) {ldelim}
 				    	{/foreach}
 					</table>
 					
-					{* Cluster Mode settings *}
+				{* Cluster Mode settings *}
 				{if $cluster_params}
 					<h3>{'Cluster mode settings for selected environment "%env"'|i18n('extension/noveniniupdate/view', '', hash('%env', $selected_env))}</h3>
 					<table class="list" width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -172,6 +172,23 @@ function confirmUpdateEnv(curEnv) {ldelim}
 					        <th>{'Cluster param value'|i18n( 'extension/noveniniupdate/view' )}</th>
 					    </tr>
 					{foreach $cluster_params as $param sequence array('bgdark', 'bglight') as $seq}
+					    <tr valign="top" class="{$seq}">
+					        <td>{$param.name}</td>
+					        <td>{$param.value}</td>
+					    </tr>
+					{/foreach}
+					</table>
+				{/if}
+				
+				{* Config PHP settings *}
+				{if $config_params}
+					<h3>{'Config.php settings for selected environment "%env"'|i18n('extension/noveniniupdate/view', '', hash('%env', $selected_env))}</h3>
+					<table class="list" width="100%" cellspacing="0" cellpadding="0" border="0">
+			    		<tr>
+							<th>{'Config param name'|i18n('extension/noveniniupdate/view')}</th>
+					        <th>{'Config param value'|i18n( 'extension/noveniniupdate/view' )}</th>
+					    </tr>
+					{foreach $config_params as $param sequence array('bgdark', 'bglight') as $seq}
 					    <tr valign="top" class="{$seq}">
 					        <td>{$param.name}</td>
 					        <td>{$param.value}</td>

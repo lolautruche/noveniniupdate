@@ -1,17 +1,18 @@
-==============================
- NovenINIUpdate documentation 
-==============================
+=================================
+ NovenINIUpdate 3.0 Documentation 
+=================================
 
---------------------------------------------------
- 2009 Jean-Luc Nguyen, Jerome Vieilledent - Noven
---------------------------------------------------
+-----------------------------------------------
+ 2009-2010 Jean-Luc Nguyen, Jerome Vieilledent
+-----------------------------------------------
 
 Introduction
 ============
 
 This extension allows to update **INI files** from an XML source. It uses the INI API available in eZ Publish kernel. It is mostly useful for update INI files depending on the website environment.
 It provides a module to use in the backoffice and a CLI script.
-Cluster Mode is supported so that the *index_cluster.php* file will also be updated. Settings for cluster mode are separated in the XML file
+Cluster Mode is supported so that the *index_cluster.php* file will also be updated. Settings for cluster mode are separated in the XML file.
+**config.php** file is also supported.
 
 
 Installation
@@ -24,7 +25,7 @@ Installation
 
 *Shell*
 ::
-  php bin/php/ezpgenerateautoloads.php -e
+  php bin/php/ezpgenerateautoloads.php -e -p
 
 
 Configuration
@@ -34,6 +35,7 @@ Edit the XML file with your needs, which path is defined in *extension/noveniniu
 The XML sample is here: *extension/noveniniupdate/source/sample.xml*.
 Be sure to get the same XML structure, only values that are different depending on the environment and check all values.
 If you aren't using the Cluster Mode, you can ignore the *<ClusterMode>* tag in the XML file.
+Idem for **config.php** file, with *<ConfigPHPFile>* tag.
 
 Warning
 -------
@@ -57,7 +59,9 @@ How to Use in the Backoffice
 
   - You should have a new *INI Config* tab on the backoffice.
   - Select the environment where to update the INI files defined on the XML file.
+  - Listed environment can be limited with security policies (ie. if you want that developpers could *only* update to *dev* and *preprod* environment)
   - You may check the new values on the setup tab, under INI parameters.
+  - If you want to make a backup of old files, check the *backup* checkbox
   - If everything's OK, click the **Udpdate Environment** button, under all listed INI parameters
 
 

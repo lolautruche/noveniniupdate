@@ -1,0 +1,878 @@
+%PDF-1.3
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+% 'BasicFonts': class PDFDictionary 
+1 0 obj
+% The standard fonts dictionary
+<< /F1 2 0 R
+ /F2 3 0 R
+ /F3 4 0 R
+ /F4 5 0 R
+ /F5 6 0 R >>
+endobj
+% 'F1': class PDFType1Font 
+2 0 obj
+% Font Helvetica
+<< /BaseFont /Helvetica
+ /Encoding /WinAnsiEncoding
+ /Name /F1
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F2': class PDFType1Font 
+3 0 obj
+% Font Helvetica-Bold
+<< /BaseFont /Helvetica-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F2
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F3': class PDFType1Font 
+4 0 obj
+% Font Helvetica-Oblique
+<< /BaseFont /Helvetica-Oblique
+ /Encoding /WinAnsiEncoding
+ /Name /F3
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F4': class PDFType1Font 
+5 0 obj
+% Font Times-Roman
+<< /BaseFont /Times-Roman
+ /Encoding /WinAnsiEncoding
+ /Name /F4
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F5': class PDFType1Font 
+6 0 obj
+% Font Courier
+<< /BaseFont /Courier
+ /Encoding /WinAnsiEncoding
+ /Name /F5
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page1': class PDFPage 
+7 0 obj
+% Page dictionary
+<< /Contents 19 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 18 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'Page2': class PDFPage 
+8 0 obj
+% Page dictionary
+<< /Contents 20 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 18 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'R9': class PDFCatalog 
+9 0 obj
+% Document Root
+<< /Outlines 11 0 R
+ /PageLabels 21 0 R
+ /PageMode /UseNone
+ /Pages 18 0 R
+ /Type /Catalog >>
+endobj
+% 'R10': class PDFInfo 
+10 0 obj
+<< /Author ()
+ /CreationDate (D:20100502121309-01'00')
+ /Keywords ()
+ /Producer (ReportLab http://www.reportlab.com)
+ /Subject (\(unspecified\))
+ /Title (NovenINIUpdate 3.0 Documentation) >>
+endobj
+% 'R11': class PDFOutlines 
+11 0 obj
+<< /Count 7
+ /First 12 0 R
+ /Last 17 0 R
+ /Type /Outlines >>
+endobj
+% 'Outline.0': class OutlineEntryObject 
+12 0 obj
+<< /Dest [ 7 0 R
+ /XYZ
+ 62.69291
+ 699.0236
+ 0 ]
+ /Next 13 0 R
+ /Parent 11 0 R
+ /Title (Introduction) >>
+endobj
+% 'Outline.1': class OutlineEntryObject 
+13 0 obj
+<< /Dest [ 7 0 R
+ /XYZ
+ 62.69291
+ 600.0236
+ 0 ]
+ /Next 14 0 R
+ /Parent 11 0 R
+ /Prev 12 0 R
+ /Title (Installation) >>
+endobj
+% 'Outline.2': class OutlineEntryObject 
+14 0 obj
+<< /Count 1
+ /Dest [ 7 0 R
+ /XYZ
+ 62.69291
+ 425.8236
+ 0 ]
+ /First 15 0 R
+ /Last 15 0 R
+ /Next 16 0 R
+ /Parent 11 0 R
+ /Prev 13 0 R
+ /Title (Configuration) >>
+endobj
+% 'Outline.7.0': class OutlineEntryObject 
+15 0 obj
+<< /Dest [ 7 0 R
+ /XYZ
+ 62.69291
+ 314.8236
+ 0 ]
+ /Parent 14 0 R
+ /Title (Warning) >>
+endobj
+% 'Outline.3': class OutlineEntryObject 
+16 0 obj
+<< /Dest [ 7 0 R
+ /XYZ
+ 62.69291
+ 137.6236
+ 0 ]
+ /Next 17 0 R
+ /Parent 11 0 R
+ /Prev 14 0 R
+ /Title (How to Use in the Backoffice) >>
+endobj
+% 'Outline.4': class OutlineEntryObject 
+17 0 obj
+<< /Dest [ 8 0 R
+ /XYZ
+ 62.69291
+ 651.0236
+ 0 ]
+ /Parent 11 0 R
+ /Prev 16 0 R
+ /Title (How to use using the CLI script) >>
+endobj
+% 'R18': class PDFPages 
+18 0 obj
+% page tree
+<< /Count 2
+ /Kids [ 7 0 R
+ 8 0 R ]
+ /Type /Pages >>
+endobj
+% 'R19': class PDFStream 
+19 0 obj
+% page stream
+<< /Length 6273 >>
+stream
+1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 741.0236 cm
+q
+BT 1 0 0 1 0 9.64 Tm 65.47488 0 Td 24 TL /F2 20 Tf 0 0 0 rg (NovenINIUpdate 3.0 Documentation) Tj T* -65.47488 0 Td ET
+Q
+Q
+q
+1 0 0 1 62.69291 711.0236 cm
+q
+BT 1 0 0 1 0 7.23 Tm 64.04238 0 Td 18 TL /F2 15 Tf 0 0 0 rg (2009-2010 Jean-Luc Nguyen, Jerome Vieilledent) Tj T* -64.04238 0 Td ET
+Q
+Q
+q
+1 0 0 1 62.69291 678.0236 cm
+q
+BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Introduction) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 612.0236 cm
+q
+BT 1 0 0 1 0 52.82 Tm .538935 Tw 12 TL /F1 10 Tf 0 0 0 rg (This extension allows to update ) Tj /F2 10 Tf (INI files ) Tj /F1 10 Tf (from an XML source. It uses the INI API available in eZ Publish) Tj T* 0 Tw .372927 Tw (kernel. It is mostly useful for update INI files depending on the website environment. It provides a module) Tj T* 0 Tw .537765 Tw (to use in the backoffice and a CLI script. Cluster Mode is supported so that the ) Tj /F3 10 Tf (index_cluster.php ) Tj /F1 10 Tf (file will) Tj T* 0 Tw 3.037485 Tw (also be updated. Settings for cluster mode are separated in the XML file. ) Tj /F2 10 Tf (config.php ) Tj /F1 10 Tf (file is also) Tj T* 0 Tw (supported.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 579.0236 cm
+q
+BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Installation) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 567.0236 cm
+Q
+q
+1 0 0 1 62.69291 489.0236 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 72 cm
+Q
+q
+1 0 0 1 20 72 cm
+Q
+q
+1 0 0 1 20 54 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (Download the compressed file under ) Tj /F3 10 Tf (extension/ ) Tj /F1 10 Tf (directory and uncompress it.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 20 54 cm
+Q
+q
+1 0 0 1 20 54 cm
+Q
+q
+1 0 0 1 20 36 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Activate the extension.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 20 36 cm
+Q
+q
+1 0 0 1 20 36 cm
+Q
+q
+1 0 0 1 20 18 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Clear the caches) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 20 18 cm
+Q
+q
+1 0 0 1 20 18 cm
+Q
+q
+1 0 0 1 20 0 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Re-build the class autoload array :) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 20 0 cm
+Q
+q
+1 0 0 1 20 0 cm
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 489.0236 cm
+Q
+q
+1 0 0 1 62.69291 471.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F3 10 Tf 12 TL (Shell) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 437.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 24 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 5.71 Tm /F5 10 Tf 12 TL (php bin/php/ezpgenerateautoloads.php -e -p) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 404.8236 cm
+q
+BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Configuration) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 326.8236 cm
+q
+BT 1 0 0 1 0 64.82 Tm 19.52452 Tw 12 TL /F1 10 Tf 0 0 0 rg (Edit the XML file with your needs, which path is defined in) Tj T* 0 Tw 2.819961 Tw /F3 10 Tf (extension/noveniniupdate/setting/noveniniupdate.ini) Tj /F1 10 Tf (, variable: ) Tj /F2 10 Tf (XmlContent ) Tj /F1 10 Tf (\(please make an override\).) Tj T* 0 Tw 1.77998 Tw (The XML sample is here: ) Tj /F3 10 Tf (extension/noveniniupdate/source/sample.xml) Tj /F1 10 Tf (. Be sure to get the same XML) Tj T* 0 Tw .72686 Tw (structure, only values that are different depending on the environment and check all values. If you aren't) Tj T* 0 Tw .635868 Tw (using the Cluster Mode, you can ignore the ) Tj /F3 10 Tf (<) Tj (ClusterMode) Tj (> ) Tj /F1 10 Tf (tag in the XML file. Idem for ) Tj /F2 10 Tf (config.php ) Tj /F1 10 Tf (file,) Tj T* 0 Tw (with ) Tj /F3 10 Tf (<) Tj (ConfigPHPFile) Tj (> ) Tj /F1 10 Tf (tag.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 296.8236 cm
+q
+BT 1 0 0 1 0 7.23 Tm 18 TL /F2 15 Tf 0 0 0 rg (Warning) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 266.8236 cm
+q
+BT 1 0 0 1 0 16.82 Tm 5.657126 Tw 12 TL /F1 10 Tf 0 0 0 rg (Some INI settings can be marked as read only in site.ini. Check site.ini ) Tj /F2 10 Tf ([eZINISettings] ) Tj /F1 10 Tf (/) Tj T* 0 Tw /F3 10 Tf (ReadonlySettingList[]) Tj /F1 10 Tf (.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 248.8236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Default values are :) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 230.8236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F3 10 Tf 12 TL (site.ini) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 149.6236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 72 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 53.71 Tm /F5 10 Tf 12 TL ([eZINISettings]) Tj T* (ReadonlySettingList[]) Tj T* (ReadonlySettingList[]=template.ini/PHP/PHPOperatorList) Tj T* (ReadonlySettingList[]=image.ini/ImageMagick/ExecutablePath) Tj T* (ReadonlySettingList[]=image.ini/ImageMagick/Executable) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 116.6236 cm
+q
+BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (How to Use in the Backoffice) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 104.6236 cm
+Q
+q
+1 0 0 1 62.69291 80.62362 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 18 cm
+Q
+q
+1 0 0 1 20 18 cm
+Q
+q
+1 0 0 1 20 0 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (You should have a new ) Tj /F3 10 Tf (INI Config ) Tj /F1 10 Tf (tab on the backoffice.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 20 0 cm
+Q
+q
+1 0 0 1 20 0 cm
+Q
+q
+Q
+Q
+ 
+endstream
+
+endobj
+% 'R20': class PDFStream 
+20 0 obj
+% page stream
+<< /Length 5126 >>
+stream
+1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 663.0236 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 84 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Select the environment where to update the INI files defined on the XML file.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 20 84 cm
+Q
+q
+1 0 0 1 20 84 cm
+Q
+q
+1 0 0 1 20 54 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+q
+1 0 0 1 6 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 16.82 Tm .956412 Tw 12 TL /F1 10 Tf 0 0 0 rg (Listed environment can be limited with security policies \(ie. if you want that developpers could) Tj T* 0 Tw /F3 10 Tf (only ) Tj /F1 10 Tf (update to ) Tj /F3 10 Tf (dev ) Tj /F1 10 Tf (and ) Tj /F3 10 Tf (preprod ) Tj /F1 10 Tf (environment\)) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 20 54 cm
+Q
+q
+1 0 0 1 20 54 cm
+Q
+q
+1 0 0 1 20 36 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (You may check the new values on the setup tab, under INI parameters.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 20 36 cm
+Q
+q
+1 0 0 1 20 36 cm
+Q
+q
+1 0 0 1 20 18 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (If you want to make a backup of old files, check the ) Tj /F3 10 Tf (backup ) Tj /F1 10 Tf (checkbox) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 20 18 cm
+Q
+q
+1 0 0 1 20 18 cm
+Q
+q
+1 0 0 1 20 0 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (If everything's OK, click the ) Tj /F2 10 Tf (Udpdate Environment ) Tj /F1 10 Tf (button, under all listed INI parameters) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 20 0 cm
+Q
+q
+1 0 0 1 20 0 cm
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 663.0236 cm
+Q
+q
+1 0 0 1 62.69291 630.0236 cm
+q
+BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (How to use using the CLI script) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 600.0236 cm
+q
+BT 1 0 0 1 0 16.82 Tm 1.998863 Tw 12 TL /F1 10 Tf 0 0 0 rg (The CLI script is located in ) Tj /F3 10 Tf (extension/noveniniupdate/bin/php/noviniupdate.php ) Tj /F1 10 Tf (It uses ) Tj /F3 10 Tf (eZComponents) Tj T* 0 Tw (Console Tools) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 462.0236 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+q
+1 0 0 1 0 123 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL (Several options are available :) Tj T* ET
+Q
+Q
+BT 1 0 0 1 0 110 Tm  T* ET
+q
+1 0 0 1 10 114 cm
+Q
+q
+1 0 0 1 10 114 cm
+Q
+q
+1 0 0 1 10 96 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (--list-envs : Lists all available environments) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 96 cm
+Q
+q
+1 0 0 1 10 96 cm
+Q
+q
+1 0 0 1 10 78 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (--env=VALUE --list-params : Lists all params configured for a given environment) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 78 cm
+Q
+q
+1 0 0 1 10 78 cm
+Q
+q
+1 0 0 1 10 48 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+q
+1 0 0 1 6 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16.82 Tm /F1 10 Tf 12 TL 1.820751 Tw (--env=VALUE --diff : Shows differences between what is currently configured and what will be) Tj T* 0 Tw (configured) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 48 cm
+Q
+q
+1 0 0 1 10 48 cm
+Q
+q
+1 0 0 1 10 30 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (--env=VALUE : Updates the INI files for the given environment) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 30 cm
+Q
+q
+1 0 0 1 10 30 cm
+Q
+q
+1 0 0 1 10 0 cm
+0 0 0 rg
+BT /F4 10 Tf 12 TL ET
+q
+1 0 0 1 6 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 16.82 Tm .394104 Tw 12 TL /F1 10 Tf 0 0 0 rg (--backup : If used with ) Tj /F3 10 Tf (--env ) Tj /F1 10 Tf (option, creates a backup of your config files in your backup directory,) Tj T* 0 Tw (defined in noveniniupdate.ini) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+Q
+Q
+ 
+endstream
+
+endobj
+% 'R21': class PDFPageLabels 
+21 0 obj
+% Document Root
+<< /Nums [ 0
+ 22 0 R
+ 1
+ 23 0 R ] >>
+endobj
+% 'R22': class PDFPageLabel 
+22 0 obj
+% None
+<< /S /D
+ /St 1 >>
+endobj
+% 'R23': class PDFPageLabel 
+23 0 obj
+% None
+<< /S /D
+ /St 2 >>
+endobj
+xref
+0 24
+0000000000 65535 f
+0000000113 00000 n
+0000000257 00000 n
+0000000422 00000 n
+0000000597 00000 n
+0000000778 00000 n
+0000000947 00000 n
+0000001106 00000 n
+0000001385 00000 n
+0000001664 00000 n
+0000001822 00000 n
+0000002066 00000 n
+0000002191 00000 n
+0000002363 00000 n
+0000002550 00000 n
+0000002782 00000 n
+0000002934 00000 n
+0000003137 00000 n
+0000003312 00000 n
+0000003427 00000 n
+0000009801 00000 n
+0000015032 00000 n
+0000015138 00000 n
+0000015215 00000 n
+trailer
+<< /ID 
+ % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
+ [(h!4f\001Q\325\001i|\(y\323\330y\260) (h!4f\001Q\325\001i|\(y\323\330y\260)] 
+
+ /Info 10 0 R
+ /Root 9 0 R
+ /Size 24 >>
+startxref
+15262
+%%EOF

@@ -77,6 +77,7 @@ try
 	{
 		if ( $http->hasPostVariable( "selectedEnvironment" ) )
 		{
+			// First check security policy limitation. Does current user have right to update in selected env ?
 			if(!ezjscAccessTemplateFunctions::hasAccessToLimitation('noveniniupdate', 'configupdate', array('NovenINIUpdate_Environment' => $http->postVariable('selectedEnvironment'))))
 				throw new NovenConfigUpdaterException(ezi18n('extension/noveniniupdate/error', 
 															 'Your policy limitations does not allow you to update config for "%env" environment', 
@@ -84,9 +85,10 @@ try
 													  ));
 			
 			$selectedEnvironment = $http->postVariable( "selectedEnvironment" );
-			$iniUpdater->setEnv($selectedEnvironment);
-			$clusterUpdater->setEnv($selectedEnvironment);
-			$configUpdater->setEnv($selectedEnvironment);
+			$backup = $http->hasPostVariable('doBackup');
+			$iniUpdater->setEnv($selectedEnvironment, $backup);
+			$clusterUpdater->setEnv($selectedEnvironment, $backup);
+			$configUpdater->setEnv($selectedEnvironment, $backup);
 			$iniUpdater->storeEnvironment($selectedEnvironment); // Stores selected environment in DB
 			$Module->redirectTo( '/noveniniupdate/view/(update)/1' );
 		}

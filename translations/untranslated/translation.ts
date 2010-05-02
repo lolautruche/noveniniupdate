@@ -101,47 +101,8 @@
         <source>Config param value</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>extension/noveniniupdate/edit</name>
     <message>
-        <source>Edit INI setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ini setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ini File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Environment</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Block</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Datatype</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Variable</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Setting value</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cancel</source>
+        <source>Do a backup before switching</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

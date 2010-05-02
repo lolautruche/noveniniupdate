@@ -101,48 +101,9 @@
         <source>Config param value</source>
         <translation>Valeur du paramètre config</translation>
     </message>
-</context>
-<context>
-    <name>extension/noveniniupdate/edit</name>
     <message>
-        <source>Edit INI setting</source>
-        <translation>Edition configuration INI</translation>
-    </message>
-    <message>
-        <source>Ini setting</source>
-        <translation>Configuration INI</translation>
-    </message>
-    <message>
-        <source>Ini File</source>
-        <translation>Fichier INI</translation>
-    </message>
-    <message>
-        <source>Environment</source>
-        <translation>Environnement</translation>
-    </message>
-    <message>
-        <source>Block</source>
-        <translation>Bloc</translation>
-    </message>
-    <message>
-        <source>Datatype</source>
-        <translation>Type de donnée</translation>
-    </message>
-    <message>
-        <source>Variable</source>
-        <translation>Variable</translation>
-    </message>
-    <message>
-        <source>Setting value</source>
-        <translation>Setting value</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Sauvegarder</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>Annuler</translation>
+        <source>Do a backup before switching</source>
+        <translation>Effectuer une sauvegarde avant le changement</translation>
     </message>
 </context>
 <context>

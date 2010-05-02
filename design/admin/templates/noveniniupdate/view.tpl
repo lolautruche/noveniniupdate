@@ -211,6 +211,10 @@ function confirmUpdateEnv(curEnv) {ldelim}
 						<div class="box-bl">
 							<div class="box-br">
 								<div class="block">
+									<label for="doBackup">{'Do a backup before switching'|i18n('extension/noveniniupdate/view')}</label>
+									<input type="checkbox" name="doBackup" id="doBackup" checked="checked">
+								</div>
+								<div class="block">
 									<input class="button" type="submit" name="updateenvbutton" onclick="return confirmUpdateEnv('{$selected_label}');" value="{'Update environment with current XML content'|i18n('extension/noveniniupdate/view')}" />
 								</div>
 							{* DESIGN: Control bar END *}

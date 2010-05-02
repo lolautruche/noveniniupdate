@@ -38,7 +38,8 @@ function confirmUpdateEnv(curEnv) {ldelim}
 			<div class="box-content">
 				<div class="context-attributes">
 					{if is_set($error_message)}
-					<div class="object"><p><ul><li>{$error_message|wash}</li></ul></p></div>
+					<h2>Error</h2>
+					<div class="object" style="color:red; font-weight:bold;"><p><ul><li>{$error_message|wash}</li></ul></p></div>
 					{/if}
 					
 					{if is_set($confirm_label)}
@@ -53,7 +54,7 @@ function confirmUpdateEnv(curEnv) {ldelim}
 					        <label>{'Select environment to view'|i18n('extension/noveniniupdate/view')}:</label>
 					        <select name="selectedEnvironment">
 								{foreach $envs as $key => $value}
-									<option value="{$key}"{if eq($key, $selected_env)} selected="selected"{/if}>{$value}</option>
+									<option value="{$key}"{if or($key|eq($selected_env), $key|eq($current_env))} selected="selected"{/if}>{$value}</option>
 									{if eq($key, $selected_env)}{def $selected_label = $value}{/if}
 								{/foreach}
 					        </select>

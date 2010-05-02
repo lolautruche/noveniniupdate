@@ -199,6 +199,10 @@
         <source>XML tag "%xmltag" is not supported by Config updater</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Your policy limitations does not allow you to update config for "%env" environment</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>extension/noveniniupdate/script</name>

@@ -4,7 +4,7 @@
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
 // SOFTWARE NAME: Noven INI Update
 // SOFTWARE RELEASE: @@@VERSION@@@
-// COPYRIGHT NOTICE: Copyright (C) 2009 - Jean-Luc Nguyen, Jerome Vieilledent - Noven.
+// COPYRIGHT NOTICE: Copyright (C) @@@YEAR@@@ - Jean-Luc Nguyen, Jerome Vieilledent - Noven.
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
 //   This program is free software; you can redistribute it and/or
@@ -39,18 +39,19 @@ $ViewList['view'] = array(
 	'single_post_actions'		=> 	array(  'updateenvbutton' => 'UpdateEnvButton' ),
 	'post_action_parameters'	=> 	array(),
 	'default_navigation_part'	=> 'noveniniupdatenavigationpart',
+	'functions'					=> 'configupdate'
 );
 
-/*
- * Edit INI
- */
-$ViewList['edit'] = array(
-	'script'					=>	'edit.php',
-	'params'					=> 	array(),
-	'unordered_params'          =>  array(  'env' => 'Env', 'line' => 'Line', 'path' => 'Path' ),	
-	'single_post_actions'		=>  array(  'writesetting'	=> 'WriteSetting',
-										    'cancelsetting'	=> 'CancelSetting' ),
-	'post_action_parameters'	=> 	array(),
-	'default_navigation_part'	=> 'noveniniupdatenavigationpart',
+// Environment limitation for policy
+$Environment = array(
+    'name'			=> 'NovenINIUpdate_Environment',
+    'values'		=> array(),
+	'extension'		=> 'noveniniupdate',
+    'path'			=> 'classes/',
+    'file'			=> 'noveniniupdatepolicyfunctions.php',
+    'class'			=> 'NovenINIUpdatePolicyFunctions',
+    'function'		=> 'fetchEnvironmentLimitationList',
+    'parameter'		=> array()
 );
 
+$FunctionList['configupdate'] = array('NovenINIUpdate_Environment' => $Environment);

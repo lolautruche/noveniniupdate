@@ -1,10 +1,14 @@
-2.1
+3.0
 -----------------
 Fixed bug with NovenConfigAbstractUpdater::checkIsEnvSupported() => returned always true
+Fixed design regression in 4.3 : left menu placeholder has reappeared
+Removed useless and potentially problematic regional settings in site.ini
 Implemented diff feature between current value and "to be applied" value
 Implemented backup feature (with new --backup option to CLI script)
+Implemented config.php update support
 Environment is now stored in *ezsite_data* table 
 Added support for eZDFSFileHandler
+Added policy limitation support for environments (with dependency on eZJSCore extension)
 
 2.0
 -----------------

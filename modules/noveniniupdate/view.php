@@ -39,11 +39,21 @@ try
 	$clusterUpdater = new NovenClusterUpdater();
 	$configUpdater = new NovenConfigUpdater();
 	$envs = $iniUpdater->getEnvs();
+	$userLimitations = NovenINIUpdatePolicyFunctions::getSimplifiedUserAccess('noveniniupdate', 'configupdate');
+	$simplifiedLimitations = $userLimitations['simplifiedLimitations'];
+	$currentEnv = $iniUpdater->getCurrentEnvironment();
+	$tpl->setVariable('current_env', $currentEnv);
 
 	$environments = array();
 	foreach ( $envs as $env )
 	{
-		$environments[(string)$env['name']] = (string)$env['comment'];
+		$envName = (string)$env['name'];
+		$envExpandedName = (string)$env['comment'];
+		
+		// Policy limitations check
+		if((isset($simplifiedLimitations['NovenINIUpdate_Environment']) && in_array($envName, $simplifiedLimitations['NovenINIUpdate_Environment'])) 
+		    || !isset($simplifiedLimitations['NovenINIUpdate_Environment']))
+			$environments[$envName] = $envExpandedName;
 	}
 	$tpl->setVariable( 'envs', $environments );
 
@@ -67,10 +77,17 @@ try
 	{
 		if ( $http->hasPostVariable( "selectedEnvironment" ) )
 		{
+			if(!ezjscAccessTemplateFunctions::hasAccessToLimitation('noveniniupdate', 'configupdate', array('NovenINIUpdate_Environment' => $http->postVariable('selectedEnvironment'))))
+				throw new NovenConfigUpdaterException(ezi18n('extension/noveniniupdate/error', 
+															 'Your policy limitations does not allow you to update config for "%env" environment', 
+															 null, array('%env' => $http->postVariable('selectedEnvironment'))
+													  ));
+			
 			$selectedEnvironment = $http->postVariable( "selectedEnvironment" );
 			$iniUpdater->setEnv($selectedEnvironment);
 			$clusterUpdater->setEnv($selectedEnvironment);
 			$configUpdater->setEnv($selectedEnvironment);
+			$iniUpdater->storeEnvironment($selectedEnvironment); // Stores selected environment in DB
 			$Module->redirectTo( '/noveniniupdate/view/(update)/1' );
 		}
 	}

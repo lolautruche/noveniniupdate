@@ -10,7 +10,6 @@ Tabs[]=noveniniupdate
 NavigationPartIdentifier=noveniniupdatenavigationpart
 Name=INI Config
 Tooltip=Edit INI files depending on your environment (ie. prod, preprod...)
-Tooltip=Noven : édition de paramètres avancés INI en fonction de l'environnement
 URL[]
 URL[default]=noveniniupdate/view
 Enabled[]
@@ -21,5 +20,8 @@ Shown[]
 Shown[default]=true
 Shown[navigation]=true
 Shown[browse]=false
+
+# Tabs policy on admin interface in 4.3
+PolicyList[]=noveniniupdate/view
 
 */ ?>

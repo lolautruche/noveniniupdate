@@ -1,3 +1,7 @@
+3.0.1
+-----------------
+Fixed error in admin tab security policy (in 4.3)
+
 3.0
 -----------------
 Fixed bug with NovenConfigAbstractUpdater::checkIsEnvSupported() => returned always true

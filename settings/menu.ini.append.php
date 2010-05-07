@@ -22,6 +22,6 @@ Shown[navigation]=true
 Shown[browse]=false
 
 # Tabs policy on admin interface in 4.3
-PolicyList[]=noveniniupdate/view
+PolicyList[]=noveniniupdate/configupdate
 
 */ ?>

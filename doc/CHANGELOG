@@ -1,5 +1,6 @@
 3.0.1
 -----------------
+Fixed bug with eZDFSFileHandler. Did not work properly and lacked of MountPointPath handling
 Fixed error in admin tab security policy (in 4.3)
 
 3.0

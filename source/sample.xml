@@ -202,7 +202,7 @@
 	<!-- "ini" attribute stands for the full file.ini.append.php path. If ommitted, default is "settings/override/file.ini.append.php" -->
 	<!-- "php" attribute stands for the cluster "index_cluster.php" file. If omitted, default is "index_cluster.php" -->
 	<ClusterMode ini="settings/override/file.ini.append.php" php="index_cluster.php">
-		<cluster env="local">
+		<cluster env="local"><!-- Database cluster -->
 			<FileHandler>eZDBFileHandler</FileHandler>
 			<DBBackend>eZDBFileHandlerMysqlBackend</DBBackend>
 			<DBHost>cluster-server</DBHost>
@@ -215,18 +215,18 @@
 			<DBConnectRetries></DBConnectRetries>
 			<DBExecuteRetries></DBExecuteRetries>
 		</cluster>
-		<cluster env="dev">
-			<FileHandler>eZDBFileHandler</FileHandler>
-			<DBBackend>eZDBFileHandlerMysqlBackend</DBBackend>
+		<cluster env="dev"><!-- DFS File handler -->
+			<FileHandler>eZDFSFileHandler</FileHandler>
+			<DBBackend>eZDFSFileHandlerMySQLBackend</DBBackend>
 			<DBHost>dev-server</DBHost>
 			<DBPort>3306</DBPort>
 			<DBSocket></DBSocket>
 			<DBName>my_dev_resources_db</DBName>
 			<DBUser>mydevuser</DBUser>
 			<DBPassword>mydevpassword</DBPassword>
-			<DBChunkSize>65535</DBChunkSize>
 			<DBConnectRetries></DBConnectRetries>
 			<DBExecuteRetries></DBExecuteRetries>
+			<MountPointPath>var/nfsmount</MountPointPath>
 		</cluster>
 		<!-- You can have a ezfs like handler. In this case, db tags are useless -->
 		<cluster env="preprod">

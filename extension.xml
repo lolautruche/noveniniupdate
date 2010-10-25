@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<software>
+	<metadata>
+		<name>Noven INI Update</name>
+		<version>@@@VERSION@@@</version>
+		<copyright>Copyright © @@@YEAR@@@ Jean-Luc Nguyen, Jérôme Vieilledent - Noven</copyright>
+		<license>GNU General Public License v2.0</license>
+		<info_url>http://projects.ez.no/noveniniupdate</info_url>
+	</metadata>
+</software>

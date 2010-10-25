@@ -1,3 +1,8 @@
+3.0.2
+-----------------
+Added extension.xml (eZ Publish 4.4+)
+Changed a label in navigation part
+
 3.0.1
 -----------------
 Fixed bug with eZDFSFileHandler. Did not work properly and lacked of MountPointPath handling

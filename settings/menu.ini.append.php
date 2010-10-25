@@ -1,7 +1,7 @@
 <?php /* #?ini charset="utf-8"?
 
 [NavigationPart]
-Part[noveniniupdatenavigationpart]=Noven: advanced INI parameters
+Part[noveniniupdatenavigationpart]=INI Config
 
 [TopAdminMenu]
 Tabs[]=noveniniupdate
@@ -21,7 +21,7 @@ Shown[default]=true
 Shown[navigation]=true
 Shown[browse]=false
 
-# Tabs policy on admin interface in 4.3
+# Tabs policy on admin interface in 4.3+
 PolicyList[]=noveniniupdate/configupdate
 
 */ ?>

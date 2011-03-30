@@ -16,12 +16,14 @@
 	<target name="package" depends="init,export" description="Builds the package">
 		<replace dir="${build.dir.dist}" token="@@@VERSION@@@" value="${build.version}">
 			<include name="**/*.php"/>
+			<include name="**/extension.xml"/>
 		</replace>
 		<tstamp>
 			<format property="BUILD_YEAR" pattern="yyyy"/>
 		</tstamp>
 		<replace dir="${build.dir.dist}" token="@@@YEAR@@@" value="${BUILD_YEAR}">
 			<include name="**/*.php"/>
+			<include name="**/extension.xml"/>
 		</replace>
 		<zip destfile="${build.dir}/noveniniupdate.zip" basedir="${build.dir.dist}" excludes="${build.dir.dist.extension}/ant/**"/>
 	</target>

@@ -87,8 +87,8 @@ class NovenINIUpdateCLIFormater
 	{
 		$aData = array(
 			array( // Table header
-				ezi18n('extension/noveniniupdate/script', 'Environment Name'), 
-				ezi18n('extension/noveniniupdate/script', 'Comment')
+				ezpI18n::tr('extension/noveniniupdate/script', 'Environment Name'), 
+				ezpI18n::tr('extension/noveniniupdate/script', 'Comment')
 			)
 		);
 		
@@ -99,7 +99,7 @@ class NovenINIUpdateCLIFormater
 		}
 		
 		$formater = new self();
-		$formater->formatTable($aData, ezi18n('extension/noveniniupdate/script', 'Environments list :'));
+		$formater->formatTable($aData, ezpI18n::tr('extension/noveniniupdate/script', 'Environments list :'));
 	}
 	
 	/**

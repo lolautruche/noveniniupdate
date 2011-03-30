@@ -71,7 +71,7 @@ class NovenINIUpdater extends NovenConfigAbstractUpdater implements INovenFileUp
 		// First check if environment is supported
 		if(!$this->checkIsEnvSupported($env))
 		{
-			$errMsg = ezi18n('extension/noveniniupdate/error', 'Given environment "%envname" is not supported/declared in XML config file', null, array('%envname' => $env));
+			$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Given environment "%envname" is not supported/declared in XML config file', null, array('%envname' => $env));
 			throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::UNSUPPORTED_ENV);
 		}
 			
@@ -114,7 +114,7 @@ class NovenINIUpdater extends NovenConfigAbstractUpdater implements INovenFileUp
 					}
 					else
 					{
-						$errMsg = ezi18n('extension/noveniniupdate/error', 'Invalid INI datatype "%datatype"', null, array('%datatype' => (string)$line['type']));
+						$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Invalid INI datatype "%datatype"', null, array('%datatype' => (string)$line['type']));
 						throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::UNSUPPORTED_DATATYPE);
 					}
 					$j++;
@@ -138,7 +138,7 @@ class NovenINIUpdater extends NovenConfigAbstractUpdater implements INovenFileUp
 		// First check if environment is supported
 		if(!$this->checkIsEnvSupported($env))
 		{
-			$errMsg = ezi18n('extension/noveniniupdate/error', 'Given environment "%envname" is not supported/declared in XML config file', null, array('%envname' => $env));
+			$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Given environment "%envname" is not supported/declared in XML config file', null, array('%envname' => $env));
 			throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::UNSUPPORTED_ENV);
 		}
 
@@ -204,7 +204,7 @@ class NovenINIUpdater extends NovenConfigAbstractUpdater implements INovenFileUp
 				
 				if(!$writeOk)
 				{
-					$errMsg = ezi18n('extension/noveniniupdate/error', 'Write error on file %inifile', null, array('%inifile' => "$path/$iniFile.append.php"));
+					$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Write error on file %inifile', null, array('%inifile' => "$path/$iniFile.append.php"));
 					throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::FILE_IO_ERROR);
 				}
 			}

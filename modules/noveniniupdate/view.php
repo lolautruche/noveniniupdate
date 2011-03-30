@@ -79,7 +79,7 @@ try
 		{
 			// First check security policy limitation. Does current user have right to update in selected env ?
 			if(!ezjscAccessTemplateFunctions::hasAccessToLimitation('noveniniupdate', 'configupdate', array('NovenINIUpdate_Environment' => $http->postVariable('selectedEnvironment'))))
-				throw new NovenConfigUpdaterException(ezi18n('extension/noveniniupdate/error', 
+				throw new NovenConfigUpdaterException(ezpI18n::tr('extension/noveniniupdate/error', 
 															 'Your policy limitations does not allow you to update config for "%env" environment', 
 															 null, array('%env' => $http->postVariable('selectedEnvironment'))
 													  ));
@@ -96,7 +96,7 @@ try
 
 	if ( isset( $Params['Update'] ) && $Params['Update'] == 1 )
 	{
-		$tpl->setVariable( 'confirm_label', ezi18n( 'extension/noveniniupdate/view', 'The INI parameter(s) have been updated for the selected environment' ) );
+		$tpl->setVariable( 'confirm_label', ezpI18n::tr( 'extension/noveniniupdate/view', 'The INI parameter(s) have been updated for the selected environment' ) );
 	}
 	
 }
@@ -111,7 +111,7 @@ catch(NovenConfigUpdaterException $e)
 $Result['path'] = array(
 	array(
 		'url'		=> false,
-		'text'		=> ezi18n( 'extension/noveniniupdate', 'Noven advanced INI parameters' )
+		'text'		=> ezpI18n::tr( 'extension/noveniniupdate', 'Noven advanced INI parameters' )
 	)
 );
 $Result['content'] = $tpl->fetch( "design:noveniniupdate/view.tpl" );

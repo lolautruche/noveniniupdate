@@ -83,7 +83,7 @@ abstract class NovenConfigAbstractUpdater
 		
 		// Check if XML file exists
 		if(!file_exists($this->xmlPath))
-			throw new NovenConfigUpdaterException(ezi18n('extension/noveniniupdate/error', 'XML content does not exist'), NovenConfigUpdaterException::XML_FILE_UNAVAILABLE);
+			throw new NovenConfigUpdaterException(ezpI18n::tr('extension/noveniniupdate/error', 'XML content does not exist'), NovenConfigUpdaterException::XML_FILE_UNAVAILABLE);
 			
 		$this->xmlDoc = $this->parseXML($this->xmlPath);
 		foreach($this->xmlDoc->envs->env as $env)
@@ -151,7 +151,7 @@ abstract class NovenConfigAbstractUpdater
 		// First check if environment is supported
 		if(!$this->checkIsEnvSupported($env))
 		{
-			$errMsg = ezi18n('extension/noveniniupdate/error', 'Given environment "%envname" is not supported/declared in XML config file', null, array('%envname' => $env));
+			$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Given environment "%envname" is not supported/declared in XML config file', null, array('%envname' => $env));
 			throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::UNSUPPORTED_ENV);
 		}
 		
@@ -208,7 +208,7 @@ abstract class NovenConfigAbstractUpdater
 			
 			// Check if given file does exists
 			if(!file_exists($filePath))
-				throw new InvalidArgumentException(ezi18n('extension/noveniniupdate/error', 
+				throw new InvalidArgumentException(ezpI18n::tr('extension/noveniniupdate/error', 
 														  'Cannot backup config file "%filePath" : it does not exist (yet)', 
 														  null, array('%filePath' => $filePath)));
 				
@@ -237,14 +237,14 @@ abstract class NovenConfigAbstractUpdater
 			{
 				$backupMkDirOK = eZDir::mkdir($fullBackupDir, false, true);
 				if(!$backupMkDirOK)
-					throw new InvalidArgumentException(ezi18n('extension/noveniniupdate/error', 
+					throw new InvalidArgumentException(ezpI18n::tr('extension/noveniniupdate/error', 
 															  "Backup dir is not writable !"));
 			}
 				
 			// Now backup file and check if operation succeeded
 			$copyOK = copy($filePath, $fullBackupDir.'/'.$fileName);
 			if(!$copyOK)
-				throw new RuntimeException(ezi18n('extension/noveniniupdate/error',
+				throw new RuntimeException(ezpI18n::tr('extension/noveniniupdate/error',
 												  'Problem occurred when backuping "%originalPath" to "%destinationPath"'),
 												  null, array('%originalPath' => $filePath, '%destinationPath' => $fullBackupDir));
 												  

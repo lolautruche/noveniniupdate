@@ -55,7 +55,7 @@ class NovenConfigUpdater extends NovenConfigAbstractUpdater implements INovenFil
 			// First check if environment is supported
 			if(!$this->checkIsEnvSupported($env))
 			{
-				$errMsg = ezi18n('extension/noveniniupdate/error', 'Given environment "%envname" is not supported/declared in XML config file', null, array('%envname' => $env));
+				$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Given environment "%envname" is not supported/declared in XML config file', null, array('%envname' => $env));
 				throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::UNSUPPORTED_ENV);
 			}
 			
@@ -69,7 +69,7 @@ class NovenConfigUpdater extends NovenConfigAbstractUpdater implements INovenFil
 			$aConfigConf = $this->xmlDoc->xpath("//ConfigPHPFile/config[@env='$env']");
 			if(!$aConfigConf)
 			{
-				$errMsg = ezi18n('extension/noveniniupdate/error', 'Config PHP file is not configured for environment "%envname" in XML config file !', null, array('%envname' => $env));
+				$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Config PHP file is not configured for environment "%envname" in XML config file !', null, array('%envname' => $env));
 				throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::CONFIG_PHP_NOT_CONFIGURED);
 			}
 			
@@ -100,7 +100,7 @@ class NovenConfigUpdater extends NovenConfigAbstractUpdater implements INovenFil
 						break;
 						
 						default:
-							$errMsg = ezi18n('extension/noveniniupdate/error', 'XML tag "%xmltag" is not supported by Config updater', null, array('%xmltag' => $tag->geName()));
+							$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'XML tag "%xmltag" is not supported by Config updater', null, array('%xmltag' => $tag->geName()));
 							throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::UNSUPPORTED_XML_TAG);
 						break;
 					}
@@ -121,7 +121,7 @@ class NovenConfigUpdater extends NovenConfigAbstractUpdater implements INovenFil
 			}
 			catch(ezcPhpGeneratorException $e)
 			{
-				$errMsg = ezi18n('extension/noveniniupdate/error', 'Write error on file %inifile', null, array('%inifile' => self::CONFIG_PHP_FILE));
+				$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Write error on file %inifile', null, array('%inifile' => self::CONFIG_PHP_FILE));
 				throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::FILE_IO_ERROR);
 			}
 		}
@@ -142,7 +142,7 @@ class NovenConfigUpdater extends NovenConfigAbstractUpdater implements INovenFil
 			// First check if environment is supported
 			if(!$this->checkIsEnvSupported($env))
 			{
-				$errMsg = ezi18n('extension/noveniniupdate/error', 'Given environment "%envname" is not supported/declared in XML config file', null, array('%envname' => $env));
+				$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Given environment "%envname" is not supported/declared in XML config file', null, array('%envname' => $env));
 				throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::UNSUPPORTED_ENV);
 			}
 			
@@ -150,7 +150,7 @@ class NovenConfigUpdater extends NovenConfigAbstractUpdater implements INovenFil
 			$aConfigConf = $this->xmlDoc->xpath("//ConfigPHPFile/config[@env='$env']");
 			if(!$aConfigConf)
 			{
-				$errMsg = ezi18n('extension/noveniniupdate/error', 'Cluster Mode is not configured for environment "%envname" in XML config file !', null, array('%envname' => $env));
+				$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Cluster Mode is not configured for environment "%envname" in XML config file !', null, array('%envname' => $env));
 				throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::CLUSTER_NOT_CONFIGURED);
 			}
 			

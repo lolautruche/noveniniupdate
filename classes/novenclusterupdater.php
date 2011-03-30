@@ -60,7 +60,7 @@ class NovenClusterUpdater extends NovenConfigAbstractUpdater implements INovenFi
 			// First check if environment is supported
 			if(!$this->checkIsEnvSupported($env))
 			{
-				$errMsg = ezi18n('extension/noveniniupdate/error', 'Given environment "%envname" is not supported/declared in XML config file', null, array('%envname' => $env));
+				$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Given environment "%envname" is not supported/declared in XML config file', null, array('%envname' => $env));
 				throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::UNSUPPORTED_ENV);
 			}
 			
@@ -78,7 +78,7 @@ class NovenClusterUpdater extends NovenConfigAbstractUpdater implements INovenFi
 			$aClusterConf = $this->xmlDoc->xpath("//ClusterMode/cluster[@env='$env']");
 			if(!$aClusterConf)
 			{
-				$errMsg = ezi18n('extension/noveniniupdate/error', 'Cluster Mode is not configured for environment "%envname" in XML config file !', null, array('%envname' => $env));
+				$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Cluster Mode is not configured for environment "%envname" in XML config file !', null, array('%envname' => $env));
 				throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::CLUSTER_NOT_CONFIGURED);
 			}
 			
@@ -103,7 +103,7 @@ class NovenClusterUpdater extends NovenConfigAbstractUpdater implements INovenFi
 				    break;
 					
 				default:
-					$errMsg = ezi18n('extension/noveniniupdate/error', 'FileHandler "%filehandler" is not supported by NovenINIUpdate !', null, array('%filehandler' => $fileHandler));
+					$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'FileHandler "%filehandler" is not supported by NovenINIUpdate !', null, array('%filehandler' => $fileHandler));
 					throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::UNSUPPORTED_FILE_HANDLER);
 					break;
 			}
@@ -123,7 +123,7 @@ class NovenClusterUpdater extends NovenConfigAbstractUpdater implements INovenFi
 		
 		if(!$writeOk)
 		{
-			$errMsg = ezi18n('extension/noveniniupdate/error', 'Write error on file %inifile', null, array('%inifile' => "$path/$iniFile.append.php"));
+			$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Write error on file %inifile', null, array('%inifile' => "$path/$iniFile.append.php"));
 			throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::FILE_IO_ERROR);
 		}
 	}
@@ -159,7 +159,7 @@ class NovenClusterUpdater extends NovenConfigAbstractUpdater implements INovenFi
 		
 		if(!$writeOk)
 		{
-			$errMsg = ezi18n('extension/noveniniupdate/error', 'Write error on file %inifile', null, array('%inifile' => "$this->iniDirPath/file.ini.append.php"));
+			$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Write error on file %inifile', null, array('%inifile' => "$this->iniDirPath/file.ini.append.php"));
 			throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::FILE_IO_ERROR);
 		}
 		
@@ -183,7 +183,7 @@ class NovenClusterUpdater extends NovenConfigAbstractUpdater implements INovenFi
 		}
 		catch(ezcPhpGeneratorException $e)
 		{
-			$errMsg = ezi18n('extension/noveniniupdate/error', 'Write error on file %inifile', null, array('%inifile' => $phpFile));
+			$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Write error on file %inifile', null, array('%inifile' => $phpFile));
 			throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::FILE_IO_ERROR);
 		}
 	}
@@ -219,7 +219,7 @@ class NovenClusterUpdater extends NovenConfigAbstractUpdater implements INovenFi
         
         if(!$writeOk)
         {
-            $errMsg = ezi18n('extension/noveniniupdate/error', 'Write error on file %inifile', null, array('%inifile' => "$this->iniDirPath/file.ini.append.php"));
+            $errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Write error on file %inifile', null, array('%inifile' => "$this->iniDirPath/file.ini.append.php"));
             throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::FILE_IO_ERROR);
         }
         
@@ -243,7 +243,7 @@ class NovenClusterUpdater extends NovenConfigAbstractUpdater implements INovenFi
         }
         catch(ezcPhpGeneratorException $e)
         {
-            $errMsg = ezi18n('extension/noveniniupdate/error', 'Write error on file %inifile', null, array('%inifile' => $phpFile));
+            $errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Write error on file %inifile', null, array('%inifile' => $phpFile));
             throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::FILE_IO_ERROR);
         }
 	}
@@ -263,7 +263,7 @@ class NovenClusterUpdater extends NovenConfigAbstractUpdater implements INovenFi
 			// First check if environment is supported
 			if(!$this->checkIsEnvSupported($env))
 			{
-				$errMsg = ezi18n('extension/noveniniupdate/error', 'Given environment "%envname" is not supported/declared in XML config file', null, array('%envname' => $env));
+				$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Given environment "%envname" is not supported/declared in XML config file', null, array('%envname' => $env));
 				throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::UNSUPPORTED_ENV);
 			}
 			
@@ -271,7 +271,7 @@ class NovenClusterUpdater extends NovenConfigAbstractUpdater implements INovenFi
 			$aClusterConf = $this->xmlDoc->xpath("//ClusterMode/cluster[@env='$env']");
 			if(!$aClusterConf)
 			{
-				$errMsg = ezi18n('extension/noveniniupdate/error', 'Cluster Mode is not configured for environment "%envname" in XML config file !', null, array('%envname' => $env));
+				$errMsg = ezpI18n::tr('extension/noveniniupdate/error', 'Cluster Mode is not configured for environment "%envname" in XML config file !', null, array('%envname' => $env));
 				throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::CLUSTER_NOT_CONFIGURED);
 			}
 			

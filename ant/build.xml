@@ -28,7 +28,7 @@
 			<include name="**/*.php"/>
 			<include name="**/extension.xml"/>
 		</replace>
-		<zip destfile="${build.dir}/${build.dir.dist.extension}.zip" basedir="${build.dir.dist}" excludes="${build.dir.dist.extension}/ant/**,${build.dir.dist.extension}/tests/**"/>
+		<zip destfile="${build.dir}/v${build.version}.zip" basedir="${build.dir.dist}" excludes="${build.dir.dist.extension}/ant/**,${build.dir.dist.extension}/tests/**,${build.dir.dist.extension}/.git/**,${build.dir.dist.extension}/.gitignore"/>
 	</target>
 
 	<target name="export" description="Exports the extension from GitHub">

@@ -1,3 +1,7 @@
+3.0.3
+-----------------
+Fixed INI update script doesn't properly define bool constants
+
 3.0.2
 -----------------
 Added extension.xml (eZ Publish 4.4+)

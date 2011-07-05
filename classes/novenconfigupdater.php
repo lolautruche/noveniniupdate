@@ -90,7 +90,7 @@ class NovenConfigUpdater extends NovenConfigAbstractUpdater implements INovenFil
 					{
 						case self::CONFIG_TAG_CONSTANT:
 							$value = (string)$tag['value']; // First cast as string
-							$value = (isset($tag['isBoolean']) && $tag['isBoolean'] == 'true') ? (bool)$tag['value'] : (string)$tag['value']; // Then cast as bool if necessary
+							$value = (isset($tag['isBoolean']) && $tag['isBoolean'] == 'true') ? (bool)$value : $value; // Then cast as bool if necessary
 							$phpGenerator->appendDefine($tag['name'], $value);
 						break;
 						

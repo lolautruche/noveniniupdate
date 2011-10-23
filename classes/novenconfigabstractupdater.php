@@ -166,6 +166,9 @@ abstract class NovenConfigAbstractUpdater
             unlink( $storage . "/noveniniupdate.env" );
         }
         eZFile::create( "noveniniupdate.env", $storage, $env );
+
+        $handler = eZClusterFileHandler::instance();
+        $handler->fileStore( $storage . "/noveniniupdate.env", $env, true, 'text/plain' );
 	}
 	
 	/**
@@ -173,10 +176,11 @@ abstract class NovenConfigAbstractUpdater
 	 * @return string
 	 */
 	public function getCurrentEnvironment()
-	{
-        $currentEnv = file_get_contents( eZSys::storageDirectory() . "/noveniniupdate.env" );
+    {
+        $currentEnv = eZClusterFileHandler::instance()->fileFetchContents( eZSys::storageDirectory() . "/noveniniupdate.env" );
         if( empty( $currentEnv ))
             $currentEnv = null;
+
         return $currentEnv;
 	}
 	

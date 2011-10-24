@@ -1,0 +1,1 @@
+DELETE FROM `ezsite_data` WHERE `ezsite_data`.`name` = "noveniniupdate_env";

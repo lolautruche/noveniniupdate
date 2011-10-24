@@ -155,40 +155,33 @@ abstract class NovenConfigAbstractUpdater
 			throw new NovenConfigUpdaterException($errMsg, NovenConfigUpdaterException::UNSUPPORTED_ENV);
 		}
 		
-		$db = eZDB::instance();
-		
-		/*
-		 * Check if entry already exists in database.
-		 * If so, update it.
-		 * If no, create a new entry
-		 */
-		$resultSelect = $db->arrayQuery('SELECT COUNT(*) AS count FROM `ezsite_data` WHERE `name`="'.self::NOVENINIUPDATE_ENV_KEY.'"');
-		if($resultSelect[0]['count'] == 0)
-		{
-			$db->query('INSERT INTO `ezsite_data` (`name`, `value` ) VALUES("'.self::NOVENINIUPDATE_ENV_KEY.'", "'.$env.'")');
-		}
-		else
-		{
-			$db->query('UPDATE `ezsite_data` SET `value`="'.$env.'" WHERE `name`="'.self::NOVENINIUPDATE_ENV_KEY.'"');
-		}
+        /*
+         * Check if noveniniupdate.env already exists.
+         * If so, unlink it.
+         * If no, create with a new entry
+         */
+        $storage = eZSys::storageDirectory();
+        if( file_exists( $storage . "/noveniniupdate.env" ) )
+        {
+            unlink( $storage . "/noveniniupdate.env" );
+        }
+        eZFile::create( "noveniniupdate.env", $storage, $env );
+
+        $handler = eZClusterFileHandler::instance();
+        $handler->fileStore( $storage . "/noveniniupdate.env", $env, true, 'text/plain' );
 	}
 	
 	/**
-	 * Fetches current environment stored in the database
+	 * Fetches current environment stored on file
 	 * @return string
 	 */
 	public function getCurrentEnvironment()
-	{
-		$currentEnv = null;
-		$db = eZDB::instance();
-		
-		$result = $db->arrayQuery('SELECT * FROM `ezsite_data` WHERE `name`="'.self::NOVENINIUPDATE_ENV_KEY.'"');
-		if($result)
-		{
-			$currentEnv = $result[0]['value'];
-		}
-		
-		return $currentEnv;
+    {
+        $currentEnv = eZClusterFileHandler::instance()->fileFetchContents( eZSys::storageDirectory() . "/noveniniupdate.env" );
+        if( empty( $currentEnv ))
+            $currentEnv = null;
+
+        return $currentEnv;
 	}
 	
 	/**

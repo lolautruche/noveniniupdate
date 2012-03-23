@@ -29,7 +29,7 @@ include_once( "kernel/common/template.php" );
 
 $Module = $Params["Module"];
 $Result = array();
-$tpl = templateInit();
+$tpl = eZTemplate::factory();
 $http = eZHTTPTool::instance();
 $errors = array();
 

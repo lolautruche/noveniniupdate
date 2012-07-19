@@ -201,7 +201,7 @@
 	<!-- Cluster mode handling. index_cluster.php will also be updated -->
 	<!-- "ini" attribute stands for the full file.ini.append.php path. If ommitted, default is "settings/override/file.ini.append.php" -->
 	<!-- "php" attribute stands for the cluster "index_cluster.php" file. If omitted, default is "index_cluster.php" -->
-	<ClusterMode ini="settings/override/file.ini.append.php" php="index_cluster.php">
+	<ClusterMode ini="settings/override/file.ini.append.php" php="config.cluster.php">
 		<cluster env="local"><!-- Database cluster -->
 			<FileHandler>eZDBFileHandler</FileHandler>
 			<DBBackend>eZDBFileHandlerMysqlBackend</DBBackend>

@@ -1,3 +1,6 @@
+{if not(is_set($selected_env))}
+{def $selected_env = "" }
+{/if}
 {include uri="design:settings/settings_validation.tpl"}
 {include uri="design:noveniniupdate/no_left_menu.tpl"}
 

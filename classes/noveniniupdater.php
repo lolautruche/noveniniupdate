@@ -173,6 +173,7 @@ class NovenINIUpdater extends NovenConfigAbstractUpdater implements INovenFileUp
 					$settingCount = 0;
 					foreach( $valueArray as $value )
 					{
+						$value = trim($value);
 						if ( preg_match( "/^\[(.+)\]\=(.+)$/", $value, $matches ) )
 						{
 							$valuesToWriteArray[$matches[1]] = trim( $matches[2], "\r\n" );

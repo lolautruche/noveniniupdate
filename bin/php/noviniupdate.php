@@ -45,11 +45,11 @@ $output->formats->error->color = 'red';
 $options = $script->getOptions(
 	'[env:][list-envs][list-params][diff][backup]',
 	'',
-	array( 'env'			=> ezpI18n::tr('extension/noveniniupdate/script', 'Environment identifier for switching INI params. Use --list-envs switch to list available environments.'),
-		   'list-envs'		=> ezpI18n::tr('extension/noveniniupdate/script', 'Lists available environmnents.'),
-		   'list-params'	=> ezpI18n::tr('extension/noveniniupdate/script', 'Lists configured params for given environment.'),
-		   'diff'			=> ezpI18n::tr('extension/noveniniupdate/script', 'Displays the difference between current params and those to be applied'),
-		   'backup'			=> ezpI18n::tr('extension/noveniniupdate/script', 'Does a backup of old INI files'),
+	array( 'env'			=> 'Environment identifier for switching INI params. Use --list-envs switch to list available environments.',
+		   'list-envs'		=> 'Lists available environmnents.',
+		   'list-params'	=>  'Lists configured params for given environment.',
+		   'diff'			=>  'Displays the difference between current params and those to be applied',
+		   'backup'			=>  'Does a backup of old INI files',
 	)
 );
 
@@ -67,7 +67,7 @@ try
 	else if($options['list-params']) // Lists params for given env
 	{
 		if(!$options['env'])
-			throw new Exception(ezpI18n::tr('extension/noveniniupdate/script', 'Environment not set ! Please set it with --env=VALUE'));
+			throw new Exception( 'Environment not set ! Please set it with --env=VALUE');
 			
 		$aParams = $iniUpdater->getParamsByEnv($options['env']);
 		NovenINIUpdateCLIFormater::formatParamsList($aParams);
@@ -81,7 +81,7 @@ try
 	else if($options['diff']) // Shows a diff between current params and params for given env
 	{
 		if(!$options['env'])
-			throw new Exception(ezpI18n::tr('extension/noveniniupdate/script', 'Environment not set ! Please set it with --env=VALUE'));
+			throw new Exception( 'Environment not set ! Please set it with --env=VALUE');
 		
 		$aParams = $iniUpdater->getParamsByEnv($options['env']);
 		NovenINIUpdateCLIFormater::formatParamsDiff($aParams);
@@ -95,16 +95,20 @@ try
 	else // Sets the environment
 	{
 		if(!$options['env'])
-			throw new Exception(ezpI18n::tr('extension/noveniniupdate/script', 'Environment not set ! Please set it with --env=VALUE'));
+			throw new Exception( 'Environment not set ! Please set it with --env=VALUE');
 		
 		$backup = (bool)$options['backup'];
 			
-		$cli->notice(ezpI18n::tr('extension/noveniniupdate/script', 'Starting environment switching...'));
+		$cli->notice( 'Starting environment switching...');
 		$iniUpdater->setEnv($options['env'], $backup);
 		$clusterUpdater->setEnv($options['env'], $backup);
 		$configUpdater->setEnv($options['env'], $backup);
+		//clear local cache
+		$dircache = str_replace("\\","/",eZSys::rootDir().eZSys::fileSeparator()."var/cache/ini".eZSys::fileSeparator());
+		$cli->output( 'clearcache local');
+		rrmdir($dircache) ;		
 		$iniUpdater->storeEnvironment($options['env']); // Stores chosen environment in DB
-		$cli->notice(ezpI18n::tr('extension/noveniniupdate/script', 'Environment switching complete !'));
+		$cli->notice( 'Environment switching complete !');
 	}
 	
 	$script->shutdown();
@@ -114,4 +118,16 @@ catch(Exception $e)
 	$output->outputText($e->getMessage(), 'error');
 	$output->outputLine();
 	$script->shutdown($e->getCode());
+}
+
+function rrmdir($dir) {
+	if(is_dir($dir)){
+    foreach(glob($dir . '/*') as $file) {
+        if(is_dir($file))
+            rrmdir($file);
+        else
+            unlink($file);
+    }
+    rmdir($dir);
+	}
 }
